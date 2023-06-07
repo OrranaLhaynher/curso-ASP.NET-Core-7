@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
+using Controllers.Models;
+using Microsoft.AspNetCore.Http.Connections;
 
 namespace Controllers.Controllers
 {
-    //Adicionar -Controller já transforma essa classe em um controller
-    //Se não quiser adicionar o -Controller, pode colocar na linha acima da classe o atributo [Controller]
     public class HomeController : Controller
     {
-        [Route("/")] //chamado de attribute routing, seta a rota do método abaixo
-        //[Route("/sayhello")] //pode adicionar várias rotas para o mesmo método
+        [Route("/")] 
         public ContentResult Index()
         {
             return new ContentResult()
@@ -18,7 +17,28 @@ namespace Controllers.Controllers
             };
         }
 
-        [Route("/about")] //chamado de attribute routing, seta a rota do método abaixo
+        [Route("/person")]
+        public JsonResult Person()
+        {
+            Person person = new Person()
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "Orrana",
+                LastName = "Sousa",
+                Age = 25
+            };
+            Person person2 = new Person()
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "Taemin",
+                LastName = "Lee",
+                Age = 29
+            };
+
+            return new JsonResult(person, person2); //converte qualquer objeto com propriedades para o tipo json
+        }
+
+        [Route("/about")] 
         public ContentResult About()
         {
             ContentResult result = new ContentResult()
@@ -29,7 +49,7 @@ namespace Controllers.Controllers
             return result;
         }
 
-        [Route("/login")] //chamado de attribute routing, seta a rota do método abaixo
+        [Route("/login")] 
         public ContentResult Login()
         {
             ContentResult result = new ContentResult();
@@ -39,17 +59,12 @@ namespace Controllers.Controllers
             return result;
         }
 
-        [Route("/register")] //chamado de attribute routing, seta a rota do método abaixo
+        [Route("/register")] 
         public ContentResult Register()
         {
 
             return Content("<h1>Pagina de cadastro</h1>", "text/html");
         }
 
-        [Route("/contact/{mobile:regex(^\\d{{10}}$)}")] //chamado de attribute routing, seta a rota do método abaixo
-        public string Contact()
-        {
-            return "Contact page\nalgo deixa de ser\nOrrana Lhaynher\nTelefone - (89) 99473-5087";
-        }
     }
 }

@@ -16,7 +16,7 @@ namespace Controllers.Controllers
             return Content("<h1>Home</h1>", "text/html");
         }
 
-        [Route("/book")]
+        [Route("/bookstore")]
         //IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
         public IActionResult Book()
         {
@@ -65,8 +65,17 @@ namespace Controllers.Controllers
                 //Response.StatusCode = 401;
                 return Unauthorized("User must be logged in");
             }
+            //o nome da classe controller é utilizado sem o -Controller, 302 - Found
+            //return new RedirectToActionResult("Books", "Store", new { } ); // o terceiro parametro é para os valores de rota, mas como não temos nesse exemplo, usamos um dummy (new {})
+            //return new RedirectToActionResult("Books", "Store", new { }, true); //301 - Moved permanently
 
-            return File("/curriculum.pdf", "application/pdf");
+            //return RedirectToAction("Books", "Store", new { id = bookId }); //shortcut to 302
+            //return RedirectToActionPermanent("Books", "Store", new { id = bookId }); //shortcut to 301
+
+            //Tem que ser uma rota no projeto local
+            //return LocalRedirect($"/store/books/{bookId}"); // return new LocalRedirectResult($"/store/books/{bookId}");
+
+            return Redirect($"/store/books/{bookId}");
         }
 
         [Route("/person")]

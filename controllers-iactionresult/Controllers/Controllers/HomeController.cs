@@ -9,12 +9,12 @@ namespace Controllers.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("/")]
-        //IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
-        public IActionResult Index()
-        {
-            return Content("<h1>Home</h1>", "text/html");
-        }
+        //[Route("/")]
+        ////IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
+        //public IActionResult Index()
+        //{
+        //    return Content("<h1>Home</h1>", "text/html");
+        //}
 
         [Route("/bookstore")]
         //IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
@@ -75,7 +75,7 @@ namespace Controllers.Controllers
             //Tem que ser uma rota no projeto local
             //return LocalRedirect($"/store/books/{bookId}"); // return new LocalRedirectResult($"/store/books/{bookId}");
 
-            return Redirect($"/store/books/{bookId}");
+            return Redirect($"/store/books/{bookId}");//redirect to the same application or other
         }
 
         [Route("/person")]

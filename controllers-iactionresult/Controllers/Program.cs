@@ -6,7 +6,8 @@ builder.Services.AddControllers(); //adiciona todos os controllers existentes no
 
 var app = builder.Build();
 
-app.MapControllers();
+app.UseStaticFiles();
+
 //O app.UseRouting() e app.UseEndpoints() são opcionais, pois se vc usa o app.MapControllers() ele chama esses dois automaticamente
 //app.UseRouting();
 
@@ -14,5 +15,7 @@ app.MapControllers();
 //{
 //    endpoints.MapControllers();
 //});
+
+app.MapControllers();
 
 app.Run();

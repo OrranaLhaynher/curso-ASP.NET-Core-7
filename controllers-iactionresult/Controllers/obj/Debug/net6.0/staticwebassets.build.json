@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "ngXeG6jYhpoM8svDD+kk9ahVa+RLiNCrvQqDMp8BfU8=",
+  "Hash": "74TpWdkgd45nogpkehYBxabMfMMzVcoPEuFpmxVOhgY=",
   "Source": "Controllers",
   "BasePath": "_content/Controllers",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Controllers\\wwwroot",
+      "Source": "Controllers",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\controllers-iactionresult\\Controllers\\wwwroot\\",
+      "BasePath": "_content/Controllers",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\controllers-iactionresult\\Controllers\\wwwroot\\curriculum.pdf",
+      "SourceId": "Controllers",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\controllers-iactionresult\\Controllers\\wwwroot\\",
+      "BasePath": "_content/Controllers",
+      "RelativePath": "curriculum.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\curriculum.pdf"
+    }
+  ]
 }

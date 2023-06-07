@@ -22,46 +22,48 @@ namespace Controllers.Controllers
         {
             if (!Request.Query.ContainsKey("bookid"))
             {
-                Response.StatusCode = 400;
-                return Content("Book id is not supplied!");
+                //Response.StatusCode = 400;
+                //return Content("Book id is not supplied!");
+                return BadRequest("Book id is not supplied!"); //or BadRequestResult()
             }
 
             if (string.IsNullOrEmpty(Convert.ToString(Request.Query["bookid"])))
             {
-                Response.StatusCode = 400;
-                return Content("Book id can't be null or empty");
+                //Response.StatusCode = 400;
+                return BadRequest("Book id can't be null or empty");
             }
 
             int bookId = Convert.ToInt32(ControllerContext.HttpContext.Request.Query["bookid"]);
 
             if (bookId <= 0) 
             {
-                Response.StatusCode = 400;
-                return Content("Book id is not valid! It cannot be less than or equal to 0.");
+                //Response.StatusCode = 400;
+                return BadRequest("Book id is not valid! It cannot be less than or equal to 0.");
             }
 
             if (bookId > 1000)
             {
-                Response.StatusCode = 400;
-                return Content("Book id is not valid! It cannot be greater than 1000.");
+                //Response.StatusCode = 400;
+                return NotFound("Book id is not valid! It cannot be greater than 1000."); //Status - 404 - NotFound()
             }
 
             if (!Request.Query.ContainsKey("isloggedin"))
             {
-                Response.StatusCode = 400;
-                return Content("The confirmation of logged in is not supplied!");
+                //Response.StatusCode = 400;
+                return BadRequest("The confirmation of logged in is not supplied!");
             }
 
             if (string.IsNullOrEmpty(Convert.ToString(Request.Query["isloggedin"])))
             {
-                Response.StatusCode = 400;
-                return Content("The confirmation of logged in can't be null or empty");
+                //Response.StatusCode = 400;
+                //return BadRequest("The confirmation of logged in can't be null or empty"); 
+                return StatusCode(401, "The confirmation of logged in can't be null or empty");
             }
 
             if (Convert.ToBoolean(Request.Query["isloggedin"]) == false)
             {
-                Response.StatusCode = 401;
-                return Content("User must be logged in");
+                //Response.StatusCode = 401;
+                return Unauthorized("User must be logged in");
             }
 
             return File("/curriculum.pdf", "application/pdf");

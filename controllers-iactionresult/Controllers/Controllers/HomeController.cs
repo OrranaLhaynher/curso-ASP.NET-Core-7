@@ -9,18 +9,66 @@ namespace Controllers.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("/")] 
-        public ContentResult Index()
+        [Route("/")]
+        //IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
+        public IActionResult Index()
         {
-            return new ContentResult()
+            return Content("<h1>Home</h1>", "text/html");
+        }
+
+        [Route("/book")]
+        //IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
+        public IActionResult Book()
+        {
+            if (!Request.Query.ContainsKey("bookid"))
             {
-                Content = "<h1>Home</h1>",
-                ContentType = "text/html"
-            };
+                Response.StatusCode = 400;
+                return Content("Book id is not supplied!");
+            }
+
+            if (string.IsNullOrEmpty(Convert.ToString(Request.Query["bookid"])))
+            {
+                Response.StatusCode = 400;
+                return Content("Book id can't be null or empty");
+            }
+
+            int bookId = Convert.ToInt32(ControllerContext.HttpContext.Request.Query["bookid"]);
+
+            if (bookId <= 0) 
+            {
+                Response.StatusCode = 400;
+                return Content("Book id is not valid! It cannot be less than or equal to 0.");
+            }
+
+            if (bookId > 1000)
+            {
+                Response.StatusCode = 400;
+                return Content("Book id is not valid! It cannot be greater than 1000.");
+            }
+
+            if (!Request.Query.ContainsKey("isloggedin"))
+            {
+                Response.StatusCode = 400;
+                return Content("The confirmation of logged in is not supplied!");
+            }
+
+            if (string.IsNullOrEmpty(Convert.ToString(Request.Query["isloggedin"])))
+            {
+                Response.StatusCode = 400;
+                return Content("The confirmation of logged in can't be null or empty");
+            }
+
+            if (Convert.ToBoolean(Request.Query["isloggedin"]) == false)
+            {
+                Response.StatusCode = 401;
+                return Content("User must be logged in");
+            }
+
+            return File("/curriculum.pdf", "application/pdf");
         }
 
         [Route("/person")]
-        public JsonResult Person()
+        public IActionResult Person()
         {
             Person person = new Person()
             {
@@ -35,14 +83,14 @@ namespace Controllers.Controllers
         }
 
         [Route("/file-download")]
-        public FileResult FileDownload()
+        public IActionResult FileDownload()
         {
             //return new VirtualFileResult("/curriculum.pdf", "application/pdf"); //quando o arquivo está no wwwroot folder
             return File("/curriculum.pdf", "application/pdf"); //shortcut
         }
 
         [Route("/file-download2")]
-        public FileResult FileDownload2()
+        public IActionResult FileDownload2()
         {
             //não é uma boa prática
             //return new PhysicalFileResult(@"C:\Users\orran\Downloads\ap15.30.64.jpg", "image/jpeg"); //quando o arquivo não está no wwwroot folder
@@ -50,7 +98,7 @@ namespace Controllers.Controllers
         }
 
         [Route("/file-download3")]
-        public FileResult FileDownload3()
+        public IActionResult FileDownload3()
         {
             //bytearray
             byte[] bytes = System.IO.File.ReadAllBytes(@"C:\Users\orran\Downloads\ap15.30.64.jpg");
@@ -59,7 +107,7 @@ namespace Controllers.Controllers
         }
 
         [Route("/about")] 
-        public ContentResult About()
+        public IActionResult About()
         {
             ContentResult result = new ContentResult()
             {
@@ -70,7 +118,7 @@ namespace Controllers.Controllers
         }
 
         [Route("/login")] 
-        public ContentResult Login()
+        public IActionResult Login()
         {
             ContentResult result = new ContentResult();
             result.Content = "<h1>Login page<h1><h2>Entre com suas informacoes de login aqui<h2>";
@@ -80,7 +128,7 @@ namespace Controllers.Controllers
         }
 
         [Route("/register")] 
-        public ContentResult Register()
+        public IActionResult Register()
         {
 
             return Content("<h1>Pagina de cadastro</h1>", "text/html");

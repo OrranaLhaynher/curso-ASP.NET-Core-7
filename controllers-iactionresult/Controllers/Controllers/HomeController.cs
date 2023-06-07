@@ -6,21 +6,22 @@ namespace Controllers.Controllers
     public class HomeController
     {
         [Route("/")] //chamado de attribute routing, seta a rota do método abaixo
-        public string home()
+        //[Route("/sayhello")] //pode adicionar várias rotas para o mesmo método
+        public string Index()
         {
-            return "Hello from method 1";
+            return "Home page";
         }
 
-        [Route("/login")]
-        public string login()
+        [Route("/about")] //chamado de attribute routing, seta a rota do método abaixo
+        public string About()
         {
-            return "Página de login";
+            return "About page";
         }
 
-        [Route("/blog")]
-        public string blog()
+        [Route("/contact/{mobile:regex(^\\d{{10}}$)}")] //chamado de attribute routing, seta a rota do método abaixo
+        public string Contact()
         {
-            return "Página do blog";
+            return "Contact page\nalgo deixa de ser\nOrrana Lhaynher\nTelefone - (89) 99473-5087";
         }
     }
 }

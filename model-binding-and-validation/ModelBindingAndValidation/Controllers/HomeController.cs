@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
-using Microsoft.AspNetCore.Http.Connections;
-using Microsoft.AspNetCore.Http;
-using System.Runtime.CompilerServices;
-using System;
 
 namespace Controllers.Controllers
 {
@@ -16,9 +11,9 @@ namespace Controllers.Controllers
         //    return Content("<h1>Home</h1>", "text/html");
         //}
 
-        [Route("/bookstore")]
+        [Route("/bookstore/{bookid?}/{isloggedin?}")] //model binding with route date
         //IActionResult é a interface pai das outras - JsonResult, ContentResult, FileResult, etc
-        public IActionResult Book(int? bookid, bool? isloggedin)
+        public IActionResult Book([FromRoute] int? bookid, [FromQuery] bool? isloggedin) //model binding with query string parameters
         {
             if (bookid == null)
             {
@@ -59,7 +54,7 @@ namespace Controllers.Controllers
             //Tem que ser uma rota no projeto local
             //return LocalRedirect($"/store/books/{bookId}"); // return new LocalRedirectResult($"/store/books/{bookId}");
 
-            return Redirect($"/store/books/{bookid}");//redirect to the same application or other
+            return Content($"<h1>O id do livro é {bookid} e o usuário está com o login {isloggedin}</h1>", "text/html");//redirect to the same application or other
         }
 
         [Route("/file-download")]

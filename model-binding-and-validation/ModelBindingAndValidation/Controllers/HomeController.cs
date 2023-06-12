@@ -7,34 +7,36 @@ namespace Controllers.Controllers
     {
         [Route("/bookstore/{bookid?}/{isloggedin?}")] //model binding with route date
         //We can set the Book book with FromQuery/FromRoute with => [FromQuery] Book book
-        public IActionResult Book([FromRoute] int? bookid, [FromQuery] bool? isloggedin, Book book) //model binding with query string parameters
+        //form-urlencoded - menos de 10 parametros no formulario (formularios simples)
+        //form-data - 10 a mais campos no formulario e anexos de arquivos (formularios mais complexos)
+        public IActionResult Book(int? bookid, bool? isloggedin, Book book) //model binding with query string parameters
         {
-            if (bookid == null)
+            if (book.BookId == null)
             {
                 return BadRequest("Book id can't be null or empty");
             }
 
-            if (bookid <= 0)
+            if (book.BookId <= 0)
             {
                 return BadRequest("Book id is not valid! It cannot be less than or equal to 0.");
             }
 
-            if (bookid > 1000)
+            if (book.BookId > 1000)
             {
                 return NotFound("Book id is not valid! It cannot be greater than 1000."); 
             }
 
-            if (isloggedin == null)
+            if (book.IsLoggedIn == null)
             {
                 return StatusCode(401, "The confirmation of logged in can't be null or empty");
             }
 
-            if (isloggedin == false)
+            if (book.IsLoggedIn == false)
             {
                 return Unauthorized("User must be logged in");
             }
 
-            return Content($"<h1>O id do livro é {bookid} e o usuário está com o login {isloggedin}</h1>", "text/html");
+            return Content($"<h1>{book.ToString()}</h1>", "text/html");
         }
 
         [Route("/about")]

@@ -24,12 +24,6 @@ namespace Controllers.Controllers
             {
                 //Response.StatusCode = 400;
                 //return Content("Book id is not supplied!");
-                return BadRequest("Book id is not supplied!"); //or BadRequestResult()
-            }
-
-            if (bookid.HasValue == false)
-            {
-                //Response.StatusCode = 400;
                 return BadRequest("Book id can't be null or empty");
             }
 
@@ -47,14 +41,6 @@ namespace Controllers.Controllers
 
             if (isloggedin == null)
             {
-                //Response.StatusCode = 400;
-                return BadRequest("The confirmation of logged in is not supplied!");
-            }
-
-            if (isloggedin.HasValue == false)
-            {
-                //Response.StatusCode = 400;
-                //return BadRequest("The confirmation of logged in can't be null or empty"); 
                 return StatusCode(401, "The confirmation of logged in can't be null or empty");
             }
 

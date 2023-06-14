@@ -38,3 +38,5 @@ namespace ModelBindingAndValidation.CustomValidators
         }
     }
 }
+
+//Essas classes de atributo são feitas para serem reutilizadas por diferentes modelos

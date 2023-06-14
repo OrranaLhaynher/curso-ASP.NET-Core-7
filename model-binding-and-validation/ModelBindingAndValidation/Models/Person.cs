@@ -4,7 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ModelBindingAndValidation.Models
 {
-    public class Person
+    //IValidatableObject - atributos são criados e só podem ser utilizados dentro desse modelo
+    public class Person : IValidatableObject
     {
         //custom error message
         [Required(ErrorMessage = "O {0} é um campo obrigatório")] //{0} pega o nome da propriedade 
@@ -41,11 +42,20 @@ namespace ModelBindingAndValidation.Models
         [DateRangeValidator("FromDate", ErrorMessage = "'FromDate' should be older or equal to 'ToDate'")]
         public DateTime? ToDate { get; set; }
 
+        public int? Age { get; set; }
+
         public override string ToString()
         {
             return $"Person name - {Name}, Person email - {Email}, Person phone - {Phone}, Person password - {Password}, Person confirm password - {ConfirmPassword}, Person price - {Price}, Person Date Of Birth - {DateOfBirth}, From Date - {FromDate}, To Date - {ToDate}";
         }
 
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (DateOfBirth.HasValue == false && Age.HasValue == false)
+            {
+                yield return new ValidationResult("Either DateOfBirth or Age must be supplied", new[] { nameof(Age)});
+            }
+        }
     }
 }
 

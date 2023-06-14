@@ -35,7 +35,7 @@ namespace ModelBindingAndValidation.CustomModelBinders
 
             if (bindingContext.ValueProvider.GetValue("DateOfBirth").Length > 0)
             {
-                person.DateOfBirth = Convert.ToDateTime(bindingContext.ValueProvider.GetValue("DateOfBirth").FirstValue;
+                person.DateOfBirth = Convert.ToDateTime(bindingContext.ValueProvider.GetValue("DateOfBirth").FirstValue);
             }
 
             bindingContext.Result = ModelBindingResult.Success(person);

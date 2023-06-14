@@ -46,7 +46,7 @@ namespace ModelBindingAndValidation.Models
 
         public override string ToString()
         {
-            return $"Person name - {Name}, Person email - {Email}, Person phone - {Phone}, Person password - {Password}, Person confirm password - {ConfirmPassword}, Person price - {Price}, Person Date Of Birth - {DateOfBirth}, From Date - {FromDate}, To Date - {ToDate}";
+            return $"Person name - {Name}\nPerson email - {Email}\nPerson phone - {Phone}\nPerson password - {Password}\nPerson confirm password - {ConfirmPassword}\nPerson price - {Price}\nPerson Date Of Birth - {DateOfBirth}\nFrom Date - {FromDate}\nTo Date - {ToDate}\nAge - {Age}";
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

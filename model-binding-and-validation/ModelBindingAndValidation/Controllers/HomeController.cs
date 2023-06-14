@@ -34,7 +34,7 @@ namespace Controllers.Controllers
                     ModelState.Values.SelectMany(value => value.Errors).Select(error => error.ErrorMessage));
                 return BadRequest(errors);
             }
-            return Content($"<h1>{person}</h1>", "text/html");
+            return Content($"{person}", "text/plain");
         }
     }
 }

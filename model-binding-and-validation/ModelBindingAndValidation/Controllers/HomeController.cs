@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using ModelBindingAndValidation.CustomModelBinders;
 using ModelBindingAndValidation.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,7 +17,7 @@ namespace Controllers.Controllers
         [Route("/register")]
         //[Bind(nameof(Person.Name), nameof(Person.Email), nameof(Person.Password), nameof(Person.ConfirmPassword), nameof(Person.DateOfBirth))]
         //[Bind] é para setar quais atributos serão utilizados. Todos os atributos como padrão usam bind, mas se a lista de atributos é grande e para certa rota, não são necessários todos, é aí que entra o [Bind]
-        public IActionResult Register([FromBody] Person person)
+        public IActionResult Register([FromBody] [ModelBinder(BinderType = typeof(PersonModelBinder))] Person person)
         {
 
             if (!ModelState.IsValid)

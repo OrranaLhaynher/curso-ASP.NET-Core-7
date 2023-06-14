@@ -46,9 +46,11 @@ namespace ModelBindingAndValidation.Models
 
         public int? Age { get; set; }
 
+        public List<string?> Tags { get; set; } = new List<string?>();
+
         public override string ToString()
         {
-            return $"Person name - {Name}\nPerson email - {Email}\nPerson phone - {Phone}\nPerson password - {Password}\nPerson confirm password - {ConfirmPassword}\nPerson price - {Price}\nPerson Date Of Birth - {DateOfBirth}\nFrom Date - {FromDate}\nTo Date - {ToDate}\nAge - {Age}";
+            return $"Person name - {Name}\nPerson email - {Email}\nPerson phone - {Phone}\nPerson password - {Password}\nPerson confirm password - {ConfirmPassword}\nPerson price - {Price}\nPerson Date Of Birth - {DateOfBirth}\nFrom Date - {FromDate}\nTo Date - {ToDate}\nAge - {Age}\nTags - {string.Join(" ", Tags)}";
         }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

@@ -36,9 +36,14 @@ namespace ModelBindingAndValidation.Models
         [MinimumYearValidator(1450, 2050)] //, ErrorMessage = "Não são aceitos anos posteriores a {1} e inferiores a 1500")
         public DateTime? DateOfBirth { get; set; }
 
+        public DateTime? FromDate { get; set; }
+
+        [DateRangeValidator("FromDate", ErrorMessage = "'FromDate' should be older or equal to 'ToDate'")]
+        public DateTime? ToDate { get; set; }
+
         public override string ToString()
         {
-            return $"Person name - {Name}, Person email - {Email}, Person phone - {Phone}, Person password - {Password}, Person confirm password - {ConfirmPassword}, Person price - {Price}, Person Date Of Birth - {DateOfBirth}";
+            return $"Person name - {Name}, Person email - {Email}, Person phone - {Phone}, Person password - {Password}, Person confirm password - {ConfirmPassword}, Person price - {Price}, Person Date Of Birth - {DateOfBirth}, From Date - {FromDate}, To Date - {ToDate}";
         }
 
     }

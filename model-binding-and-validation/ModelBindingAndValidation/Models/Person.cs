@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using ModelBindingAndValidation.CustomValidators;
 using System.ComponentModel.DataAnnotations;
 
@@ -18,7 +19,7 @@ namespace ModelBindingAndValidation.Models
         [EmailAddress(ErrorMessage = "O campo {0} deve estar em um formato valido")]
         public string? Email { get; set; }
 
-        [Required(ErrorMessage = "O número de telefone é um campo obrigatório")]
+        //[Required(ErrorMessage = "O número de telefone é um campo obrigatório")]
         [Phone(ErrorMessage = "O campo {0} deve estar em um formato valido")]
         //[ValidateNever] //stop the validation in this property
         public string? Phone { get; set; }
@@ -30,10 +31,11 @@ namespace ModelBindingAndValidation.Models
         [Compare("Password", ErrorMessage = "{0} deve ser igual ao campo {1}")]
         public string? ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "O preço é um campo obrigatório")]
+        //[Required(ErrorMessage = "O preço é um campo obrigatório")]
         [Range(0, 1000.00, ErrorMessage = "O {0} deve ter valores entre R${1} e R${2}")]
         public double? Price { get; set; }
 
+        [BindNever]
         [MinimumYearValidator(1450, 2050)] //, ErrorMessage = "Não são aceitos anos posteriores a {1} e inferiores a 1500")
         public DateTime? DateOfBirth { get; set; }
 

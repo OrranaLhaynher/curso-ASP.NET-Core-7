@@ -74,5 +74,11 @@ namespace RazorViews.Controllers
 
             return View(model);
         }
+
+        [Route("/home/products/all")]
+        public IActionResult All()
+        {
+            return View();
+        }
     }
 }

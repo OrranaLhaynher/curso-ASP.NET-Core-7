@@ -5,7 +5,7 @@ namespace RazorViews.Controllers
     public class ProductController : Controller
     {
         [Route("/products/all")]
-        public IActionResult Index()
+        public IActionResult All()
         {
             return View();
         }

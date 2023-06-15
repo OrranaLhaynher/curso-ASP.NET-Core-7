@@ -48,5 +48,31 @@ namespace RazorViews.Controllers
                 return View("../Details/Index", matchingPerson);
             }
         }
+
+        [Route("/products")]
+        public IActionResult Products()
+        {
+            Person person = new Person()
+            {
+                Name = "Orrana",
+                DateOfBirth = DateTime.Parse("1998-06-02"),
+                PersonGender = Gender.Female,
+            };
+
+            Product product = new Product()
+            {
+                Id = 1,
+                Name = "Base",
+                Price = 67.50
+            };
+
+            PersonAndProductWrapperModel model = new PersonAndProductWrapperModel()
+            {
+                PersonData = person,
+                ProductData = product
+            };
+
+            return View("../Products/Index", model);
+        }
     }
 }

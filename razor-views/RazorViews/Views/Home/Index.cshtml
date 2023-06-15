@@ -12,33 +12,39 @@
 <body>
     <div class="page-content">
         <h1>Dados de pessoas</h1>
-        @foreach (Person person in Model)
-        {
-            <div class="box float-left w-50">
-                <h3>@person.Name</h3>
-                <table class="table w-100"> 
-                    <tbody>
-                        <tr>
-                            <th><h4>Gender</h4></th>
-                            <th><h4>Date of birth</h4></th>
-                        </tr>
-                        <tr class="text-center">
-                            <td>@person.PersonGender</td>
-                            @*<td>@person.DateOfBirth?.ToString("dd/MM/yyyy")</td> -> Isso ou a opção com o if*@ 
-                            @if (person.DateOfBirth != null)
-                            {
-                                <td>@person.DateOfBirth.Value.ToString("dd/MM/yyyy")</td>
-                            }
-                            else
-                            {
-                                <td>No data</td>
-                            }
-                        </tr>
-                    </tbody>
-                </table>
-                <a href="/details/@person.Name">Detalhes</a>
-            </div>
-        }
+        <div>
+            @foreach (Person person in Model)
+            {
+                <div class="box float-left w-50">
+                    <h3>@person.Name</h3>
+                    <table class="table w-100"> 
+                        <tbody>
+                            <tr>
+                                <th><h4>Gender</h4></th>
+                                <th><h4>Date of birth</h4></th>
+                            </tr>
+                            <tr class="text-center">
+                                <td>@person.PersonGender</td>
+                                @*<td>@person.DateOfBirth?.ToString("dd/MM/yyyy")</td> -> Isso ou a opção com o if*@ 
+                                @if (person.DateOfBirth != null)
+                                {
+                                    <td>@person.DateOfBirth.Value.ToString("dd/MM/yyyy")</td>
+                                }
+                                else
+                                {
+                                    <td>No data</td>
+                                }
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="/details/@person.Name">Detalhes</a>
+                </div>
+            }
+        </div>
+        <div>
+            <a href="/products">Products</a>
+        </div>
     </div>
+    
 </body>
 </html>

@@ -12,6 +12,8 @@ C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.AssemblyInfo.cs
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.csproj.CoreCompileInputs.cache
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.RazorAssemblyInfo.cache
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.RazorAssemblyInfo.cs
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\staticwebassets\msbuild.RazorViews.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\staticwebassets\msbuild.build.RazorViews.props
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.RazorViews.props
@@ -25,5 +27,3 @@ C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.pdb
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.genruntimeconfig.cache
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\ref\RazorViews.dll
-C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.RazorAssemblyInfo.cache
-C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews\obj\Debug\net6.0\RazorViews.RazorAssemblyInfo.cs

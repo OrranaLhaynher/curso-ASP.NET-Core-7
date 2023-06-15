@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p2Pocj3xytLMNskZwH9weCxs0f8zYKVJUXgLwEdX5vk=",
+  "Hash": "JhYnyD4Smo3KXiXwpf5C7SDK9q8BZ0f2/NLVJDjV8Ck=",
   "Source": "RazorViews",
   "BasePath": "_content/RazorViews",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\razor-views\\RazorViews\\wwwroot\\css\\StyleSheet.css",
+      "SourceId": "RazorViews",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\razor-views\\RazorViews\\wwwroot\\",
+      "BasePath": "_content/RazorViews",
+      "RelativePath": "css/StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\StyleSheet.css"
+    }
+  ]
 }

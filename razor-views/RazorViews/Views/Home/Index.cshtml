@@ -6,7 +6,7 @@
     Person person = new Person()
     {
         Name = "Orrana Lhaynher",
-        DateOfBirth = Convert.ToDateTime("1998-06-02")
+        DateOfBirth = Convert.ToDateTime("1998-06-02") //null
     };
 }
 
@@ -20,10 +20,14 @@
         <h1>Escrevendo algo aqui</h1>
         <h2>@appTitle</h2>
         <h3>Hello @person.Name</h3>
-        @{
-            double age = Math.Round((DateTime.Now - person.DateOfBirth).TotalDays / 365.25);
+        @if(person.DateOfBirth != null){
+            double age = Math.Round(((TimeSpan)(DateTime.Now - person.DateOfBirth)).TotalDays / 365.25);
+            <h4>@age anos</h4>
         }
-        <h4>@age anos</h4>
+        else
+        {
+            <h4>Data de nascimento inválida</h4>
+        }
         <form> 
             <label>Nome</label>
             <input type="text" /> <br>

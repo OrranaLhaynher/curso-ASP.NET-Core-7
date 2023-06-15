@@ -1,0 +1,38 @@
+﻿@using RazorViews.Models
+
+@{
+    string appTitle = "ASP.NET Core Demo APP";
+
+    Person person = new Person()
+    {
+        Name = "Orrana Lhaynher",
+        DateOfBirth = Convert.ToDateTime("1998-06-02")
+    };
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Minha primeira página</title>
+    </head>
+    <body>
+        <h1>Escrevendo algo aqui</h1>
+        <h2>@appTitle</h2>
+        <h3>Hello @person.Name</h3>
+        @{
+            double age = Math.Round((DateTime.Now - person.DateOfBirth).TotalDays / 365.25);
+        }
+        <h4>@age anos</h4>
+        <form> 
+            <label>Nome</label>
+            <input type="text" /> <br>
+            <label>Email</label>
+            <input type="email" /> <br>
+            <label>Password</label>
+            <input type="password" /> <br>
+            <label>Confirm Password</label>
+            <input type="password" /> <br>
+        </form>
+    </body>
+</html>

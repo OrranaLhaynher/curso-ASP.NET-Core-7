@@ -1,7 +1,8 @@
-﻿@using RazorViews.Models
-@using static RazorViews.Models.Person;
+﻿<!DOCTYPE html>
 
-<!DOCTYPE html>
+@using RazorViews.Models
+@model List<Person> //or IEnumerable<Person>, tanto faz. View fortemente tipada, ou seja, linkada com um modelo
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
@@ -12,7 +13,7 @@
     <div class="page-content">
         <h1>Escrevendo algo aqui</h1>
         <h2>@ViewData["appTitle"]</h2>
-        @foreach (Person person in ViewBag.people)
+        @foreach (Person person in Model)
         {
             <div class="box float-left w-50">
                 <h3>@person.Name</h3>

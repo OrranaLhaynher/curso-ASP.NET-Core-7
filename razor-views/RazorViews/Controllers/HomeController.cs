@@ -20,9 +20,9 @@ namespace RazorViews.Controllers
                 new Person() { Name = "Mickayla", DateOfBirth = DateTime.Parse("2004-12-05"), PersonGender = Gender.Other }
             };
 
-            ViewData["people"] = people;
+            //ViewData["people"] = people;
 
-            return View();
+            return View("Index", people);
         }
     }
 }

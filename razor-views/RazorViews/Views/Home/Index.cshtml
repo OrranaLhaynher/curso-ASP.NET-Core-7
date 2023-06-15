@@ -2,20 +2,7 @@
 @using static RazorViews.Models.Person;
 
 @{
-    string appTitle = "ASP.NET Core Demo APP";
-    List<Person> people = new List<Person>()
-    {
-        new Person() { Name = "John", DateOfBirth = DateTime.Parse("1988-07-09"), PersonGender = Gender.Male },
-        new Person() { Name = "Samantha", PersonGender = Gender.Male },
-        new Person() { Name = "Chris", DateOfBirth = DateTime.Parse("2001-04-02"), PersonGender = Gender.Other },
-        new Person() { Name = "Michelle", DateOfBirth = DateTime.Parse("1970-01-14"), PersonGender = Gender.Female },
-        new Person() { Name = "Mickayla", DateOfBirth = DateTime.Parse("2004-12-05"), PersonGender = Gender.Other }
-    };
-
-    string alertMessage = $"<script>alert('{people.Count} people found')</script>";
-}
-
-@*@{
+    List<Person>? people = (List<Person>?)@ViewData["people"];
     //local function
     string FormattingPeople(Person person)
     {
@@ -29,26 +16,6 @@
             return $"{person.Name} não possui dados sobre o dia do seu nascimento e o seu gênero é {person.PersonGender}";
         }
     }
-}*@
-
-@functions{
-    //method
-    string FormattingPeople(Person person)
-    {
-        if (person.DateOfBirth != null)
-        {
-            double age = Math.Round(((TimeSpan)(DateTime.Now - person.DateOfBirth)).TotalDays / 365.25);
-            return $"{person.Name} nasceu em {person.DateOfBirth.Value.ToString("dd/MM/yyyy")}, tem {age} anos e o seu gênero é {person.PersonGender}";
-        }
-        else
-        {
-            return $"{person.Name} não possui dados sobre o dia do seu nascimento e o seu gênero é {person.PersonGender}";
-        }
-    }
-
-    int x = 10;
-
-    public Guid Id { get; set; } = new Guid("{51ECE5F9-CCD7-4A28-9929-854F7BC0870D}");
 }
 
 <!DOCTYPE html>
@@ -59,7 +26,7 @@
 </head>
 <body>
     <h1>Escrevendo algo aqui</h1>
-    <h2>@appTitle</h2>
+    <h2>@ViewData["appTitle"]</h2>
     <form>
         <label>Nome</label>
         <input type="text" /> <br>
@@ -74,8 +41,5 @@
     {
         <h3>@FormattingPeople(person)</h3>
     }
-    <h3>Id -- @Id</h3>
-    @Html.Raw(alertMessage) 
-    @*Não pode ser usado com entrada de dados do usuário, somente se for dados buscados pelo próprio desenvolvedor. Pois pode ser usada para hacking da aplicação*@
 </body>
 </html>

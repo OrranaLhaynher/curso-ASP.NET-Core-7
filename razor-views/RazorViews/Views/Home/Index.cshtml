@@ -6,13 +6,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
-    <title>Minha primeira página</title>
+    <title>Home</title>
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <div class="page-content">
-        <h1>Escrevendo algo aqui</h1>
-        <h2>@ViewData["appTitle"]</h2>
+        <h1>Dados de pessoas</h1>
         @foreach (Person person in Model)
         {
             <div class="box float-left w-50">
@@ -37,6 +36,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <a href="/details/@person.Name">Detalhes</a>
             </div>
         }
     </div>

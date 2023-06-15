@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+@using RazorViews.Models;
+@model Person
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Details</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="page-content">
+        <h1>Detalhes da pessoa</h1>
+        <div class="box">
+            <h2>@Model.Name</h2>
+            <table class="table w-50">
+                <tbody>
+                    <tr>
+                        <th><h3>Gender</h3></th>
+                        <th><h3>Date of birth</h3></th>
+                        <th><h3>Age</h3></th>
+                    </tr>
+                    <tr class="text-center">
+                        <td>@Model.PersonGender</td>
+                        @{
+                            DateTime? dateOfBirth = Model.DateOfBirth;
+
+                            if (Model.DateOfBirth != null)
+                            {
+                                <td>@dateOfBirth?.ToString("dd/MM/yyyy")</td>
+                                double age = Math.Round(((TimeSpan)(DateTime.Now - Model.DateOfBirth)).TotalDays / 365.25);
+                                <td>@age</td>
+                            }
+                            else
+                            {
+                                <td>No data</td>
+                                <td>No data</td>
+                            }
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="/">Voltar</a>
+    </div>
+</body>
+</html>

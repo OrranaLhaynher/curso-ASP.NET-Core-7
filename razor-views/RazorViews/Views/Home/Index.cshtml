@@ -32,17 +32,18 @@
             <label>Confirm Password</label>
             <input type="password" /> <br>
         </form>
-        @foreach (var person in people)
+        @for (var i = 0; i< 2; i++) 
         {
+            var person = people[i];
             <h3>@person.Name
-                <span>, </span>
-                @if (@person.DateOfBirth != null)
-                {
-                    @person.DateOfBirth.Value.ToString("dd/MM/yyyy")
-                }
-                <span>, </span>
-                @person.PersonGender
-            </h3>
-        }
+                    <span>, </span>
+                    @if (@person.DateOfBirth != null)
+                    {
+                        @person.DateOfBirth.Value.ToString("dd/MM/yyyy")
+                    }
+                    <span>, </span>
+                    @person.PersonGender
+                </h3>
+            }
 </body>
 </html>

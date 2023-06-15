@@ -3,12 +3,13 @@
 
 @{
     string appTitle = "ASP.NET Core Demo APP";
-
-    Person person = new Person()
+    List<Person> people = new List<Person>()
     {
-        Name = "Orrana Lhaynher",
-        DateOfBirth = Convert.ToDateTime("1998-06-02"), //null
-        PersonGender = Gender.Female
+        new Person() { Name = "John", DateOfBirth = DateTime.Parse("1988-07-09"), PersonGender = Gender.Male },
+        new Person() { Name = "Samantha", DateOfBirth = DateTime.Parse("1998-10-29"), PersonGender = Gender.Male },
+        new Person() { Name = "Chris", DateOfBirth = DateTime.Parse("2001-04-02"), PersonGender = Gender.Other },
+        new Person() { Name = "Michelle", DateOfBirth = DateTime.Parse("1970-01-14"), PersonGender = Gender.Female },
+        new Person() { Name = "Mickayla", DateOfBirth = DateTime.Parse("2004-12-05"), PersonGender = Gender.Other }
     };
 }
 
@@ -21,15 +22,6 @@
     <body>
         <h1>Escrevendo algo aqui</h1>
         <h2>@appTitle</h2>
-        <h3>Hello @person.Name</h3>
-        @if(person.DateOfBirth != null){
-            double age = Math.Round(((TimeSpan)(DateTime.Now - person.DateOfBirth)).TotalDays / 365.25);
-            <h4>@age anos</h4>
-        }
-        else
-        {
-            <h4>Data de nascimento inválida</h4>
-        }
         <form> 
             <label>Nome</label>
             <input type="text" /> <br>
@@ -40,21 +32,9 @@
             <label>Confirm Password</label>
             <input type="password" /> <br>
         </form>
-        @switch (person.PersonGender)
+        @foreach (var person in people)
         {
-            case Gender.Male:
-                <h4>Gênero masculino</h4>
-                break;
-            case Gender.Female:
-                <h4>Gênero feminino</h4>
-                break;
-            case Gender.Other:
-                <h4>Outro</h4>
-                break;
-            default:
-                <h4>Opção inválida</h4>
-                break;
-                
+            <h3>@person.Name, @person.DateOfBirth.Value.ToString("dd/MM/yyyy"), @person.PersonGender</h3>
         }
-    </body>
+</body>
 </html>

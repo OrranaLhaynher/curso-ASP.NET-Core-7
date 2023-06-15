@@ -22,7 +22,7 @@ namespace RazorViews.Controllers
 
             //ViewData["people"] = people;
 
-            return View("Index", people);
+            return View(people);
         }
 
         [Route("/details/{name?}")]
@@ -45,7 +45,7 @@ namespace RazorViews.Controllers
 
                 Person? matchingPerson = people.Where(temp => temp.Name?.ToLower() == name.ToLower()).FirstOrDefault();
 
-                return View("../Details/Index", matchingPerson);
+                return View(matchingPerson);
             }
         }
 
@@ -72,7 +72,7 @@ namespace RazorViews.Controllers
                 ProductData = product
             };
 
-            return View("../Products/Index", model);
+            return View(model);
         }
     }
 }

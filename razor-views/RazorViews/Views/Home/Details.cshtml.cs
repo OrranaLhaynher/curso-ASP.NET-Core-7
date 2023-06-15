@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RazorViews.Views.Details
+namespace RazorViews.Views.Home
 {
     public class IndexModel : PageModel
     {

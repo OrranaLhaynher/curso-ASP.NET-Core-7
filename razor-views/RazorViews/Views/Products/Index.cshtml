@@ -1,55 +1,14 @@
 ﻿<!DOCTYPE html>
-
-@model RazorViews.Models.PersonAndProductWrapperModel
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8" />
-    <title>Products</title>
+    <title>All Products</title>
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="page-content">
-        <h1>Pessoa e produto</h1>
-
-        <div class="box w-100">
-            <h2>Person</h2>
-            <table class="table w-50">
-                <tbody>
-                    <tr class="text-center">
-                        <th>Name</th>
-                        <th>Date of birth</th>
-                        <th>Gender</th>
-                    </tr>
-
-                    <tr class="text-center">
-                        <td>@Model.PersonData.Name</td>
-                        <td>@Model.PersonData.DateOfBirth?.ToString("dd/MM/yyyy")</td>
-                        <td>@Model.PersonData.PersonGender</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="box w-100">
-            <h2>Product</h2>
-            <table class="table w-50">
-                <tbody>
-                    <tr class="text-center">
-                        <th>Product ID</th>
-                        <th>Product name</th>
-                        <th>Product price</th>
-                    </tr>
-
-                    <tr class="text-center">
-                        <td>@Model.ProductData.Id</td>
-                        <td>@Model.ProductData.Name</td>
-                        <td>@Model.ProductData.Price</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <h1>All products</h1>
     </div>
 </body>
 

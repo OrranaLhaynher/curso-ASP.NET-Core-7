@@ -16,14 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\razor-views\RazorViews
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/Details/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xJbmRleC5jc2h0bWw=
+[C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/Home/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/Home/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/Home/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/orran/Documents/GitHub/curso-ASP.NET-Core-7/razor-views/RazorViews/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

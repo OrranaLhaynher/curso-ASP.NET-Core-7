@@ -75,6 +75,7 @@
         <h3>@FormattingPeople(person)</h3>
     }
     <h3>Id -- @Id</h3>
-    @Html.Raw(alertMessage)
+    @Html.Raw(alertMessage) 
+    @*Não pode ser usado com entrada de dados do usuário, somente se for dados buscados pelo próprio desenvolvedor. Pois pode ser usada para hacking da aplicação*@
 </body>
 </html>

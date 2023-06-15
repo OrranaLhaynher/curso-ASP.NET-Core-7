@@ -6,11 +6,47 @@
     List<Person> people = new List<Person>()
     {
         new Person() { Name = "John", DateOfBirth = DateTime.Parse("1988-07-09"), PersonGender = Gender.Male },
-        new Person() { Name = "Samantha", DateOfBirth = DateTime.Parse("1998-10-29"), PersonGender = Gender.Male },
+        new Person() { Name = "Samantha", PersonGender = Gender.Male },
         new Person() { Name = "Chris", DateOfBirth = DateTime.Parse("2001-04-02"), PersonGender = Gender.Other },
         new Person() { Name = "Michelle", DateOfBirth = DateTime.Parse("1970-01-14"), PersonGender = Gender.Female },
         new Person() { Name = "Mickayla", DateOfBirth = DateTime.Parse("2004-12-05"), PersonGender = Gender.Other }
     };
+}
+
+@*@{
+    //local function
+    string FormattingPeople(Person person)
+    {
+        if (person.DateOfBirth != null)
+        {
+            double age = Math.Round(((TimeSpan)(DateTime.Now - person.DateOfBirth)).TotalDays / 365.25);
+            return $"{person.Name} nasceu em {person.DateOfBirth.Value.ToString("dd/MM/yyyy")}, tem {age} anos e o seu gênero é {person.PersonGender}";
+        }
+        else
+        {
+            return $"{person.Name} não possui dados sobre o dia do seu nascimento e o seu gênero é {person.PersonGender}";
+        }
+    }
+}*@
+
+@functions{
+    //method
+    string FormattingPeople(Person person)
+    {
+        if (person.DateOfBirth != null)
+        {
+            double age = Math.Round(((TimeSpan)(DateTime.Now - person.DateOfBirth)).TotalDays / 365.25);
+            return $"{person.Name} nasceu em {person.DateOfBirth.Value.ToString("dd/MM/yyyy")}, tem {age} anos e o seu gênero é {person.PersonGender}";
+        }
+        else
+        {
+            return $"{person.Name} não possui dados sobre o dia do seu nascimento e o seu gênero é {person.PersonGender}";
+        }
+    }
+
+    int x = 10;
+
+    public Guid Id { get; set; } = new Guid("{51ECE5F9-CCD7-4A28-9929-854F7BC0870D}");
 }
 
 <!DOCTYPE html>
@@ -29,26 +65,13 @@
         <input type="email" /> <br>
         <label>Password</label>
         <input type="password" /> <br>
-        @*<label>Confirm Password</label>
-        <input type="password" /> <br>*@
+        <label>Confirm Password</label>
+        <input type="password" /> <br>
     </form>
-    @for (var i = 0; i < 2; i++)
+    @foreach (var person in people)
     {
-        var person = people[i];
-        <span>Texto literal/statico</span><br />
-        @: Ctrl + K, Ctrl + D - formatação
-        <br />
-        <text>Também pode ser feito com as tags <text></text></text>
-        <h3>
-            @person.Name
-            <span>, </span>
-            @if (@person.DateOfBirth != null)
-            {
-                @person.DateOfBirth.Value.ToString("dd/MM/yyyy")
-            }
-            <span>, </span>
-            @person.PersonGender
-        </h3>
+        <h3>@FormattingPeople(person)</h3>
     }
+    <h3>Id -- @Id</h3>
 </body>
 </html>

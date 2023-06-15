@@ -1,4 +1,5 @@
 ﻿@using RazorViews.Models
+@using static RazorViews.Models.Person;
 
 @{
     string appTitle = "ASP.NET Core Demo APP";
@@ -6,7 +7,8 @@
     Person person = new Person()
     {
         Name = "Orrana Lhaynher",
-        DateOfBirth = Convert.ToDateTime("1998-06-02") //null
+        DateOfBirth = Convert.ToDateTime("1998-06-02"), //null
+        PersonGender = Gender.Female
     };
 }
 
@@ -38,5 +40,21 @@
             <label>Confirm Password</label>
             <input type="password" /> <br>
         </form>
+        @switch (person.PersonGender)
+        {
+            case Gender.Male:
+                <h4>Gênero masculino</h4>
+                break;
+            case Gender.Female:
+                <h4>Gênero feminino</h4>
+                break;
+            case Gender.Other:
+                <h4>Outro</h4>
+                break;
+            default:
+                <h4>Opção inválida</h4>
+                break;
+                
+        }
     </body>
 </html>

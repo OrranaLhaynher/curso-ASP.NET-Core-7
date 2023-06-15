@@ -11,6 +11,8 @@
         new Person() { Name = "Michelle", DateOfBirth = DateTime.Parse("1970-01-14"), PersonGender = Gender.Female },
         new Person() { Name = "Mickayla", DateOfBirth = DateTime.Parse("2004-12-05"), PersonGender = Gender.Other }
     };
+
+    string alertMessage = $"<script>alert('{people.Count} people found')</script>";
 }
 
 @*@{
@@ -73,5 +75,6 @@
         <h3>@FormattingPeople(person)</h3>
     }
     <h3>Id -- @Id</h3>
+    @Html.Raw(alertMessage)
 </body>
 </html>

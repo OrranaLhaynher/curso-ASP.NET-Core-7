@@ -34,7 +34,15 @@
         </form>
         @foreach (var person in people)
         {
-            <h3>@person.Name, @person.DateOfBirth.Value.ToString("dd/MM/yyyy"), @person.PersonGender</h3>
+            <h3>@person.Name
+                <span>, </span>
+                @if (@person.DateOfBirth != null)
+                {
+                    @person.DateOfBirth.Value.ToString("dd/MM/yyyy")
+                }
+                <span>, </span>
+                @person.PersonGender
+            </h3>
         }
 </body>
 </html>

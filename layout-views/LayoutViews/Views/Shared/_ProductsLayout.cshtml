@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" /> @*Caso não pegue, mesmo depois de limpar a solução -> Shift + Ctrl + R no Chrome*@
+</head>
+<body>
+    <div class="flex full-size-height">
+        <div class="flex-1 grey-back">Sidebar</div>
+
+        <div class="flex-3 white-back">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

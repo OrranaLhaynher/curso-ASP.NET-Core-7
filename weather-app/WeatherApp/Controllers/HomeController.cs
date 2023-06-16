@@ -24,6 +24,8 @@ namespace WeatherApp.Controllers
                         CityUniqueCode = "PAR", CityName = "Paris", DateAndTime = DateTime.Parse("2030-01-01 9:00"),  TemperatureFahrenheit = 82
                     }
                 };
+
+                ViewData["Title"] = "Weather";
                 return View(cities);
             }
             else
@@ -54,6 +56,8 @@ namespace WeatherApp.Controllers
                     if (cities.Where(temp => temp.CityUniqueCode == cityName).Any())
                     {
                         CityWeather? city = cities.Where(temp => temp.CityUniqueCode == cityName).FirstOrDefault();
+
+                        ViewData["Title"] = "Weather by City";
                         return View(city);
                     }
                     else

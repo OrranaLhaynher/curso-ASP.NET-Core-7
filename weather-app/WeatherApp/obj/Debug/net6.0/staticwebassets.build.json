@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "s7/D/U3gCjGGl1LhJoeKduv2+rn21D/1cbgXeh1CmWY=",
+  "Hash": "OLJGoggqz+IWLNr9rYX9ZssJcOF6jwFzG4mNzrmOkzo=",
   "Source": "WeatherApp",
   "BasePath": "_content/WeatherApp",
   "Mode": "Default",
@@ -32,23 +32,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\StyleSheet.css"
-    },
-    {
-      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\wwwroot\\StyleSheet1.css",
-      "SourceId": "WeatherApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\wwwroot\\",
-      "BasePath": "_content/WeatherApp",
-      "RelativePath": "StyleSheet1.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\StyleSheet1.css"
     }
   ]
 }

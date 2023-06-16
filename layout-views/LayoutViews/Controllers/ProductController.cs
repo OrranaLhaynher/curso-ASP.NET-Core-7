@@ -11,10 +11,11 @@ namespace LayoutViews.Controllers
             return View();
         }
 
-        [Route("/products/search")]
-        public IActionResult Search()
+        [Route("/products/search/{id?}")]
+        public IActionResult Search(int? id)
         {
             ViewData["title"] = "Search";
+            ViewData["id"] = id;
             return View();
         }
 

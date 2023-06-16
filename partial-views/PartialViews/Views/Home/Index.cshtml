@@ -1,25 +1,15 @@
 ﻿<h1>Home page</h1>
 <h2>Home page of the project</h2>
 
-<partial name="_ListPartialView"></partial>
-
 @{
-    var myViewData = new ViewDataDictionary(ViewData);
-
-    myViewData["listTitle"] = "Contries";
-    myViewData["listItems"] = new List<string>()
+    ListModel model = new ListModel();
+    model.ListTitle = "Countries";
+    model.ListItems = new List<string>()
     {
         "Brazil",
         "Egypt",
-        "Russia",
-        "India",
-        "China",
-        "South Korea"
+        "Russia"
     };
 }
 
-<div class="box">
-    <partial name="_ListPartialView" view-data="myViewData"></partial>
-</div>
-
-<h5>@ViewData["listTitle"]</h5>
+<partial name="_ListPartialView" model="model"></partial>

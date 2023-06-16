@@ -6,9 +6,19 @@
 </p>
 
 @*<partial name="_ListPartialView" />*@
-@await Html.PartialAsync("_ListPartialView")
+@*@await Html.PartialAsync("_ListPartialView")*@
 @*O primeiro e o segundo funcionam do mesmo jeito*@
 
 @{
-    await Html.RenderPartialAsync("_ListPartialView"); //Melhor usado em projetos grandes, pois melhora o desempenho
+    ListModel model = new ListModel();
+    model.ListTitle = "Countries";
+    model.ListItems = new List<string>()
+    {
+        "Canada",
+        "Egypt",
+        "South Korea",
+        "Argentina"
+    };
 }
+
+<partial name="_ListPartialView" model="model"/>

@@ -1,22 +1,18 @@
-﻿<div class="list-container">
+﻿@model ListModel
 
-    @{
+<div class="list-container">
+
+    @*@{
         ViewData["listTitle"] = "Updated";
-    }
+    }*@
 
-    <h3>@ViewBag.listTitle</h3>
+    <h3>@Model.ListTitle</h3>
 
     <ul class="list">
-        @foreach(string city in ViewBag.listItems)
+        @foreach(string city in Model.ListItems)
         {
             <li>@city</li>
         }
-        
-        @*<li>New York</li>
-        <li>Paris</li>
-        <li>Jaicos</li>
-        <li>Tokio</li>
-        <li>Rome</li>*@
     </ul>
 
 </div>

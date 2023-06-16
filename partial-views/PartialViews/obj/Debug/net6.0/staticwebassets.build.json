@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "fsRAsO28/ovVzMvPdY9BBtLJyEbj0FbUo1k7I8boE6I=",
+  "Source": "PartialViews",
+  "BasePath": "_content/PartialViews",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PartialViews\\wwwroot",
+      "Source": "PartialViews",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\partial-views\\PartialViews\\wwwroot\\",
+      "BasePath": "_content/PartialViews",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\partial-views\\PartialViews\\wwwroot\\StyleSheet.css",
+      "SourceId": "PartialViews",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\partial-views\\PartialViews\\wwwroot\\",
+      "BasePath": "_content/PartialViews",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

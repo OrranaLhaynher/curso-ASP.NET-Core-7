@@ -1,40 +1,10 @@
 ﻿@model List<CityWeather>
 
-@{
-    string ChooseColor(int temperature)
-    {
-        if (temperature < 44)
-        {
-            return "#AFD5F0";
-        }
-        else if (temperature >= 44 && temperature <= 74)
-        {
-            return "#77dd77";
-        }
-        else
-        {
-            return "#FAC898";
-        }
-    }
-}
-
 <div class="margin-top-200 margin-left">
     <div class="flex">
         @foreach (CityWeather city in Model)
         {
-            <div class="box cursor-pointer w-30" style="background-color:@ChooseColor(city.TemperatureFahrenheit)">
-                <div class="flex-borderless">
-                    <div class="w-50">
-                        <h2>@city.CityName</h2>
-                        <h4 class="text-dark-grey">@city.DateAndTime.ToString("hh:mm tt")</h4>
-                        <a href="~/weather/@city.CityUniqueCode" class="margin-top">Details</a>
-                    </div>
-                    <div class="w-50 border-left">
-                        <h1 class="margin-left">@city.TemperatureFahrenheit <sup class="text-grey">&#8457</sup></h1>
-                    </div>
-                </div>
-
-            </div>
+            <partial name="_CityPartialView" model="city"></partial>
         }
     </div>
 </div>

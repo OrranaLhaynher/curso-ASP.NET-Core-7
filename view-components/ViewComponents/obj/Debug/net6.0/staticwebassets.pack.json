@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\StyleSheet.css",
+      "PackagePath": "staticwebassets\\StyleSheet.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ViewComponents.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ViewComponents.props",
+      "PackagePath": "build\\ViewComponents.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ViewComponents.props",
+      "PackagePath": "buildMultiTargeting\\ViewComponents.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ViewComponents.props",
+      "PackagePath": "buildTransitive\\ViewComponents.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

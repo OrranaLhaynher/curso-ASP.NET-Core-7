@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "y/Vdn83bTGTmO7fLqP2cMAju4TjZPCebxGyLDHBQMDQ=",
+  "Source": "ViewComponents",
+  "BasePath": "_content/ViewComponents",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ViewComponents\\wwwroot",
+      "Source": "ViewComponents",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\",
+      "BasePath": "_content/ViewComponents",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\StyleSheet.css",
+      "SourceId": "ViewComponents",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\",
+      "BasePath": "_content/ViewComponents",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

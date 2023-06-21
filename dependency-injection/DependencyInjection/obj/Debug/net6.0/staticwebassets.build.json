@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "L1oQys2nU8/o0cce5QQWdWMWb8remPudDNKswZYF9f0=",
+  "Source": "DependencyInjection",
+  "BasePath": "_content/DependencyInjection",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DependencyInjection\\wwwroot",
+      "Source": "DependencyInjection",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\DependencyInjection\\wwwroot\\",
+      "BasePath": "_content/DependencyInjection",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\DependencyInjection\\wwwroot\\StyleSheet.css",
+      "SourceId": "DependencyInjection",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\DependencyInjection\\wwwroot\\",
+      "BasePath": "_content/DependencyInjection",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

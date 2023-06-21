@@ -10,3 +10,6 @@ C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Servic
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Services\obj\Debug\net6.0\refint\Services.dll
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Services\obj\Debug\net6.0\Services.pdb
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Services\obj\Debug\net6.0\ref\Services.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Services\bin\Debug\net6.0\ServiceContracts.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Services\bin\Debug\net6.0\ServiceContracts.pdb
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\dependency-injection\Services\obj\Debug\net6.0\Services.csproj.CopyComplete

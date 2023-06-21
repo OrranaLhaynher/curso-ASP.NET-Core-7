@@ -7,10 +7,10 @@ namespace DependencyInjection.Controllers
     {
         private readonly ICitiesService _citiesService;
 
-        public HomeController()
+        public HomeController(ICitiesService citiesService)
         {
             //create object of CitiesService class
-            _citiesService = null;//new ICitiesService();
+            _citiesService = citiesService;
         }
 
         [Route("/")]

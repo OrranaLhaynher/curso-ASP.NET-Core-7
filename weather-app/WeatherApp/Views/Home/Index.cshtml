@@ -4,7 +4,8 @@
     <div class="flex">
         @foreach (CityWeather city in Model)
         {
-            <partial name="_CityPartialView" model="city"></partial>
+            <vc:weather city="city"></vc:weather>
+            //@await Component.InvokeAsync("Weather", new { city = city })
         }
     </div>
 </div>

@@ -1,19 +1,10 @@
 ﻿<h1>Home page</h1>
 <br />
 
-@{
-    PersonGridModel personModel = new PersonGridModel()
-    {
-        GridTitle = "Persons",
-        Persons = new List<Person>()
-        {
-            new Person() { Name="Maria", JobTitle="Teacher", JobDescription="She teaches to small kids" },
-            new Person() { Name="Osvaldo", JobTitle="Freelancer", JobDescription="He does what he wants" },
-            new Person() { Name="Mario", JobTitle="Manager", JobDescription="He manage things" },
+<button class="button button-blue-back" id="load-persons-list">Load persons</button>
 
-        }
-    };
-}
-@await Component.InvokeAsync("Grid", new {
-    grid = personModel
-})
+<div id="list">
+
+</div>
+
+<script src="~/persons.js"></script>

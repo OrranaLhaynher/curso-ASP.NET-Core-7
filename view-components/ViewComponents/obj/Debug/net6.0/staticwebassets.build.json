@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "y/Vdn83bTGTmO7fLqP2cMAju4TjZPCebxGyLDHBQMDQ=",
+  "Hash": "4Dixafqwgj0u1GuHfRIFxYX6WipaZBawwJq2iMPoO7Y=",
   "Source": "ViewComponents",
   "BasePath": "_content/ViewComponents",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\persons.js",
+      "SourceId": "ViewComponents",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\",
+      "BasePath": "_content/ViewComponents",
+      "RelativePath": "persons.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\persons.js"
+    },
     {
       "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\view-components\\ViewComponents\\wwwroot\\StyleSheet.css",
       "SourceId": "ViewComponents",

@@ -3,11 +3,28 @@
 <h3>
     What is Lorem Ipsum?
 </h3>
-<p>    
+<p>
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 </p>
 <br />
 
-@await Component.InvokeAsync("Grid")
+@{
+    PersonGridModel grid = new PersonGridModel()
+    {
+        GridTitle = "Persons List",
+        Persons = new List<Person>()
+        {
+            new Person() {Name="Orrana Lhaynher", JobTitle="Software Developer", JobDescription="Develops software with differents languages"},
+            new Person() {Name="Lee Taemin", JobTitle="Kpop Idol", JobDescription="Kpop singer that has multiple talents"},
+            new Person() {Name="Joaquim da Vaquejada", JobTitle="Vaqueiro", JobDescription="Já fiquei com preguiça"},
+            new Person() {Name="Orraniely Veloso", JobTitle="Students", JobDescription="Studes to be someone"},
+            new Person() {Name="Lula da Silva", JobTitle="Brazil's president", JobDescription="Governs Brazil"},
+        }
+    };
+}
+@await Component.InvokeAsync("Grid", new {
+    grid = grid
+})
+
 <br />
-<vc:grid></vc:grid> 
+<vc:grid grid="grid"></vc:grid>

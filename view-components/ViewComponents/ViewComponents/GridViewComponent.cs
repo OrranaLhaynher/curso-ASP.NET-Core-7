@@ -8,7 +8,7 @@ namespace ViewComponents.ViewComponents
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            PersonGridModel model = new PersonGridModel()
+            PersonGridModel grid = new PersonGridModel()
             {
                 GridTitle = "Persons List",
                 Persons = new List<Person>()
@@ -21,9 +21,9 @@ namespace ViewComponents.ViewComponents
                 }
             };
 
-            ViewData["personList"] = model;
+            //ViewData["personList"] = grid;
 
-            return View(); //invoke a partial view -> ~/Views/Shared/Components/Grid/Default.cshtml
+            return View("Sample", grid); //invoke a partial view -> ~/Views/Shared/Components/Grid/Default.cshtml
         }
     }
 }

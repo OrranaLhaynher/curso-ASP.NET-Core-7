@@ -29,6 +29,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj"
+              },
               "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\Services\\Services.csproj": {
                 "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\Services\\Services.csproj"
               }
@@ -67,6 +70,61 @@
         }
       }
     },
+    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj",
+        "projectName": "ServiceContracts",
+        "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj",
+        "packagesPath": "C:\\Users\\orran\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\orran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -90,7 +148,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\ServiceContracts\\ServiceContracts.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

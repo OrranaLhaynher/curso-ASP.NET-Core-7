@@ -1,6 +1,8 @@
-﻿namespace Services
+﻿using ServiceContracts;
+
+namespace Services
 {
-    public class CitiesService
+    public class CitiesService : ICitiesService
     {
         private List<string> _cities; //é recomendando adicionar o _ antes do nome de propriedades privadas
 

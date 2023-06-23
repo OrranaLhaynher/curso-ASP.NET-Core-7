@@ -2,7 +2,7 @@
 
 namespace Services
 {
-    public class CitiesService : ICitiesService
+    public class CitiesService : ICitiesService, IDisposable
     {
         private List<string> _cities; //é recomendando adicionar o _ antes do nome de propriedades privadas
         private Guid _serviceInstanceId;
@@ -31,6 +31,11 @@ namespace Services
         public List<string> GetCities()
         {
             return _cities;
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

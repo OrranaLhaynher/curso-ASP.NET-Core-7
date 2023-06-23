@@ -1,14 +1,18 @@
 ﻿@model IEnumerable<string>
+@inject ICitiesService citiesService 
+@*this is when a service is created for views*@
 
 @{
     ViewData["Title"] = "Home page";
+    Guid idTest = citiesService.ServiceInstanceId;
+    List<string> cities = citiesService.GetCities();
 }
 
 <h1>Cities</h1>
 <br />
 <br />
 <ul class="list">
-    @foreach (string city in Model)
+    @foreach (string city in cities)
     {
         <li>@city</li>
     }
@@ -17,4 +21,8 @@
 <div>@ViewBag.InstanceId_1</div>
 <div>@ViewBag.InstanceId_2</div>
 <div>@ViewBag.InstanceId_3</div>
+
+
 <div class="box">@ViewBag.InstanceId_InScope</div>
+
+<div>@idTest</div>

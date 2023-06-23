@@ -1,16 +1,19 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using ServiceContracts;
 using Services;
     
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
 builder.Services.AddControllersWithViews();
-//builder.Services.Add(new ServiceDescriptor(
-//    typeof(ICitiesService),
-//    typeof(CitiesService),
-//    ServiceLifetime.Scoped
-//));
-//builder.Services.AddTransient<ICitiesService, CitiesService>();
-builder.Services.AddScoped<ICitiesService, CitiesService>();
-//builder.Services.AddSingleton<ICitiesService, CitiesService>();
+
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{
+    //containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().InstancePerDependency(); //AddTransient
+    containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().InstancePerLifetimeScope(); //AddScoped
+    //containerBuilder.RegisterType<CitiesService>().As<ICitiesService>().SingleInstance(); //AddSingleton
+});
 
 var app = builder.Build();
 
@@ -19,9 +22,3 @@ app.UseRouting();
 app.MapControllers();
 
 app.Run();
-
-
-//ServiceLifetime - indicates when a new object of the service has to be created by the IoC/DI container
-//Transient - per injection. Destruido quando o escopo "acaba", ao final da requisição
-//Scoped - per scope (browser request). Destruido do mesmo jeito que o Transient
-//Singleton - for entire application lifetime. Destruido somente quando a aplicação acaba/ é fechada.

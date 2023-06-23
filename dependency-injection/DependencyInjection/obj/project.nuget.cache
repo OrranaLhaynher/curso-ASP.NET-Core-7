@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lfPIaG9juTmeysXWKqgsRxCDCpTo9PYFZ9FvqLJsoEtl4e/DzZM4z+kbOaCFnVeTFEzEwNkUTqs03d/iLufh2Q==",
+  "dgSpecHash": "8d8DvVXdtthaHYWHQKOlTPiPBLmw87dyPZ4OCxMPjLSMBxBGbZ6+ueD2lZeUYLA5CkULcmO2yD+iDFhhRctwww==",
   "success": true,
   "projectFilePath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\dependency-injection\\DependencyInjection\\DependencyInjection.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\orran\\.nuget\\packages\\autofac\\7.0.1\\autofac.7.0.1.nupkg.sha512",
+    "C:\\Users\\orran\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\orran\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\orran\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "zBgBu0qWGmlUxoT6D4twWYsBk2DnFts1UxyqVkrrfqA=",
+  "Source": "Environments",
+  "BasePath": "_content/Environments",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Environments\\wwwroot",
+      "Source": "Environments",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\environments\\Environments\\wwwroot\\",
+      "BasePath": "_content/Environments",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\environments\\Environments\\wwwroot\\StyleSheet.css",
+      "SourceId": "Environments",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\environments\\Environments\\wwwroot\\",
+      "BasePath": "_content/Environments",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

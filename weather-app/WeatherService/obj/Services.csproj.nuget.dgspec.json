@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\WeatherApp.csproj": {}
+    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherService\\Services.csproj": {}
   },
   "projects": {
     "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\ServiceContracts\\ServiceContracts.csproj": {
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\WeatherApp.csproj": {
+    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherService\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\WeatherApp.csproj",
-        "projectName": "WeatherApp",
-        "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\WeatherApp.csproj",
+        "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherService\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherService\\Services.csproj",
         "packagesPath": "C:\\Users\\orran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherApp\\obj\\",
+        "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\weather-app\\WeatherService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\orran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,7 +77,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -111,9 +110,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

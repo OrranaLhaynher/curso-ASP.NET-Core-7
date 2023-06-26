@@ -1,29 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic;
+using ServiceContracts;
 using WeatherApp.Models;
 
 namespace WeatherApp.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IWeatherService _weatherService;
+
+        public WeatherController(IWeatherService weatherService)
+        {
+            _weatherService = weatherService;
+        }
+
         [Route("/")]
         public IActionResult Index()
         {
             if (Request.Method == "GET")
             {
 
-                List<CityWeather> cities = new List<CityWeather>()
-                {
-                    new CityWeather() {
-                        CityUniqueCode = "LDN", CityName = "London", DateAndTime = DateTime.Parse("2030-01-01 8:00"), TemperatureFahrenheit = 33
-                    },
-                    new CityWeather() {
-                        CityUniqueCode = "NYC", CityName = "New York", DateAndTime = DateTime.Parse("2030-01-01 3:00"),  TemperatureFahrenheit = 60
-                    },
-                    new CityWeather() {
-                        CityUniqueCode = "PAR", CityName = "Paris", DateAndTime = DateTime.Parse("2030-01-01 9:00"),  TemperatureFahrenheit = 82
-                    }
-                };
+                List<CityWeather> cities = _weatherService.GetWeatherDetails();
 
                 ViewData["Title"] = "Weather";
                 return View(cities);
@@ -41,30 +37,9 @@ namespace WeatherApp.Controllers
             {
                 if (!string.IsNullOrEmpty(cityName))
                 {
-                    List<CityWeather> cities = new List<CityWeather>()
-                    {
-                        new CityWeather() {
-                            CityUniqueCode = "LDN", CityName = "London", DateAndTime = DateTime.Parse("2030-01-01 8:00"), TemperatureFahrenheit = 33
-                        },
-                        new CityWeather() {
-                            CityUniqueCode = "NYC", CityName = "New York", DateAndTime = DateTime.Parse("2030-01-01 3:00"),  TemperatureFahrenheit = 60
-                        },
-                        new CityWeather() {
-                            CityUniqueCode = "PAR", CityName = "Paris", DateAndTime = DateTime.Parse("2030-01-01 9:00"),  TemperatureFahrenheit = 82
-                        }
-                    };
-                    if (cities.Where(temp => temp.CityUniqueCode == cityName).Any())
-                    {
-                        CityWeather? city = cities.Where(temp => temp.CityUniqueCode == cityName).FirstOrDefault();
-
-                        ViewData["Title"] = "Weather by City";
-                        return View(city);
-                    }
-                    else
-                    {
-                        return Content("City not found");
-                    }
-
+                    CityWeather? city = _weatherService.GetWeatherByCityCode(cityName); 
+                    ViewData["Title"] = "Weather by City";
+                    return View(city);
                 }
                 else
                 {

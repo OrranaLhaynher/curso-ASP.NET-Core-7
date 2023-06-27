@@ -8,3 +8,10 @@
     Environment is @ViewBag.CurrentEnvironment
 </div>
 
+<environment include="Development">
+    <button class="button button-blue-back">Button only for development environment</button>
+</environment>
+
+<environment exclude="Development">
+    <button class="button button-green-back">Button except for development environment</button>
+</environment>

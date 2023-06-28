@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "MERbi7aYIyPgXTqcevy6ABMxlRfZcFYI7jpv1uxDleU=",
+  "Hash": "FNoGz0MdUP5eT20Sy8y+rsc+GasebEFOYgegFJVi3FE=",
   "Source": "Configuration",
   "BasePath": "_content/Configuration",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Configuration\\wwwroot",
+      "Source": "Configuration",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\configuration\\Configuration\\wwwroot\\",
+      "BasePath": "_content/Configuration",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\configuration\\Configuration\\wwwroot\\StyleSheet.css",
+      "SourceId": "Configuration",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\configuration\\Configuration\\wwwroot\\",
+      "BasePath": "_content/Configuration",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
 }

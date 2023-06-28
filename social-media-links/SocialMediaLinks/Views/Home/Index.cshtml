@@ -1,0 +1,30 @@
+﻿﻿﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="page-content">
+            <div class="margin-bottom">
+                <h1>Social Media Links</h1>
+            </div>
+
+            ﻿<div class="flex">
+                <div><a href="@ViewBag.SocialMediaLinks.Facebook">Facebook</a></div>
+
+                <environment exclude="Development">
+                    <div><a href="@ViewBag.SocialMediaLinks.Instagram">Instagram</a></div>
+                </environment>
+
+                <div><a href="@ViewBag.SocialMediaLinks.Twitter">Twitter</a></div>
+
+                <div><a href="@ViewBag.SocialMediaLinks.Youtube">Youtube</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "kyhqHoH2vpcxWdowAMriPmd+v0Hz4pmEwfPayH2lDmY=",
+  "Source": "SocialMediaLinks",
+  "BasePath": "_content/SocialMediaLinks",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SocialMediaLinks\\wwwroot",
+      "Source": "SocialMediaLinks",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\social-media-links\\SocialMediaLinks\\wwwroot\\",
+      "BasePath": "_content/SocialMediaLinks",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\social-media-links\\SocialMediaLinks\\wwwroot\\StyleSheet.css",
+      "SourceId": "SocialMediaLinks",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\social-media-links\\SocialMediaLinks\\wwwroot\\",
+      "BasePath": "_content/SocialMediaLinks",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

@@ -1,5 +1,50 @@
-﻿@{
+﻿@model StocksApp.Models.Stocks
+
+@{
     ViewBag.Title = "Home";
 }
 
-<h1>Index view</h1>
+<div class="box trading-panel">
+    <div class="flex trading-panel-flex">
+        <div id="stock-price-panel">
+            <div class="stock text-center">
+                <h1 class="stock-title">@Model.StockSymbol</h1> <br />
+
+                <table class="table">
+                    <tbody class="text-center">
+                        <tr>
+                            <th>Current Price</th>
+                            <th>Change</th>
+                            <th>Percent Change</th>
+                            <th>High Price Of The Day</th>
+                            <th>Low Price Of The Day</th>
+                            <th>Open Price Of The Day</th>
+                            <th>Previous Close Price</th>
+                        </tr>
+                        <tr>
+                            <th>@Model.CurrentPrice.ToString("N")</th>
+                            <th>@Model.Change.ToString("N")</th>
+                            <th>@Model.PercentChange.ToString("N")</th>
+                            <th>@Model.HighPriceOfTheDay.ToString("N")</th>
+                            <th>@Model.LowPriceOfTheDay.ToString("N")</th>
+                            <th>@Model.OpenPriceOfTheDay.ToString("N")</th>
+                            <th>@Model.PreviousClosePrice.ToString("N")</th>
+                        </tr>
+                     
+                        <tr>
+                            
+                            
+                        <tr>
+                            
+                            
+                        <tr>
+                            
+                            
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

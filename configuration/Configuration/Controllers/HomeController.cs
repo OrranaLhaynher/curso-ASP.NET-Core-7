@@ -17,9 +17,14 @@ namespace Configuration.Controllers
             //ViewBag.ClientID = _configuration["WeatherAPI:ClientID"];
             //ViewBag.ClientSecretKey = _configuration.GetValue<string>("WeatherAPI:ClientSecretKey", "the default secret key");//_configuration.GetValue<string>("myName", "Orrana");
 
-            IConfigurationSection section = _configuration.GetSection("WeatherAPI");
-            ViewBag.ClientID = section["ClientID"];
-            ViewBag.ClientSecretKey = section["ClientSecretKey"];
+            //Get
+            //WeatherAPIOptions option = _configuration.GetSection("WeatherAPI").Get<WeatherAPIOptions>();
+
+            //Bind
+            WeatherAPIOptions option = new WeatherAPIOptions();
+            _configuration.GetSection("WeatherAPI").Bind(option);
+            ViewBag.ClientID = option.ClientId;
+            ViewBag.ClientSecretKey = option.ClientSecretKey;
 
 
             return View();

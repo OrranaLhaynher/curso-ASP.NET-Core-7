@@ -14,7 +14,14 @@ namespace Configuration.Controllers
         public IActionResult Index()
         {
             ViewBag.Title = "Home";
-            ViewBag.MyKey = _configuration["myKey"]; //_configuration.GetValue<string>("myName", "Orrana");
+            //ViewBag.ClientID = _configuration["WeatherAPI:ClientID"];
+            //ViewBag.ClientSecretKey = _configuration.GetValue<string>("WeatherAPI:ClientSecretKey", "the default secret key");//_configuration.GetValue<string>("myName", "Orrana");
+
+            IConfigurationSection section = _configuration.GetSection("WeatherAPI");
+            ViewBag.ClientID = section["ClientID"];
+            ViewBag.ClientSecretKey = section["ClientSecretKey"];
+
+
             return View();
         }
     }

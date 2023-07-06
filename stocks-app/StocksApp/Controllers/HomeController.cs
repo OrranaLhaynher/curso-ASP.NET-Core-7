@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using StocksApp.Models;
 using StocksApp.Services;
+using System.Globalization;
 
 namespace StocksApp.Controllers
 {
@@ -29,13 +30,13 @@ namespace StocksApp.Controllers
             Stocks stock = new Stocks()
             {
                 StockSymbol = "MSFT",
-                CurrentPrice = Convert.ToDouble(responseDictionary["c"].ToString()),
-                Change = Convert.ToDouble(responseDictionary["d"].ToString()),
-                PercentChange = Convert.ToDouble(responseDictionary["dp"].ToString()),
-                HighPriceOfTheDay = Convert.ToDouble(responseDictionary["h"].ToString()),
-                LowPriceOfTheDay = Convert.ToDouble(responseDictionary["l"].ToString()),
-                OpenPriceOfTheDay = Convert.ToDouble(responseDictionary["o"].ToString()),
-                PreviousClosePrice = Convert.ToDouble(responseDictionary["pc"].ToString())
+                CurrentPrice = Convert.ToDouble(responseDictionary["c"].ToString(), CultureInfo.InvariantCulture),
+                Change = Convert.ToDouble(responseDictionary["d"].ToString(), CultureInfo.InvariantCulture),
+                PercentChange = Convert.ToDouble(responseDictionary["dp"].ToString(), CultureInfo.InvariantCulture),
+                HighPriceOfTheDay = Convert.ToDouble(responseDictionary["h"].ToString(), CultureInfo.InvariantCulture),
+                LowPriceOfTheDay = Convert.ToDouble(responseDictionary["l"].ToString(), CultureInfo.InvariantCulture),
+                OpenPriceOfTheDay = Convert.ToDouble(responseDictionary["o"].ToString(), CultureInfo.InvariantCulture),
+                PreviousClosePrice = Convert.ToDouble(responseDictionary["pc"].ToString(), CultureInfo.InvariantCulture)
             };
 
             return View(stock);

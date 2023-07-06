@@ -1633,7 +1633,7 @@
           }
         }
       },
-      "xunit.analyzers/1.0.0": {
+      "xunit.analyzers/1.1.0": {
         "type": "package"
       },
       "xunit.assert/2.4.2": {
@@ -1711,6 +1711,29 @@
         },
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "ServiceContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ServiceContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ServiceContracts.dll": {}
         }
       }
     }
@@ -5391,10 +5414,10 @@
         "xunit.abstractions.nuspec"
       ]
     },
-    "xunit.analyzers/1.0.0": {
-      "sha512": "BeO8hEgs/c8Ls2647fPfieMngncvf0D0xYNDfIO59MolxtCtVjFRd6SRc+7tj8VMqkVOuJcnc9eh4ngI2cAmLQ==",
+    "xunit.analyzers/1.1.0": {
+      "sha512": "pFgSns6v+apWOqKaMpbi7LG7iHy9Dmhz54ySJKnn2f8jsArRsnOXf0Naqxy2+g0Q8YI7xhkfxT6YVoY+4GcQFg==",
       "type": "package",
-      "path": "xunit.analyzers/1.0.0",
+      "path": "xunit.analyzers/1.1.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -5404,7 +5427,7 @@
         "analyzers/dotnet/cs/xunit.analyzers.fixes.dll",
         "tools/install.ps1",
         "tools/uninstall.ps1",
-        "xunit.analyzers.1.0.0.nupkg.sha512",
+        "xunit.analyzers.1.1.0.nupkg.sha512",
         "xunit.analyzers.nuspec"
       ]
     },
@@ -5506,13 +5529,26 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "ServiceContracts/1.0.0": {
+      "type": "project",
+      "path": "../ServiceContracts/ServiceContracts.csproj",
+      "msbuildProject": "../ServiceContracts/ServiceContracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Entities >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
+      "ServiceContracts >= 1.0.0",
       "coverlet.collector >= 3.2.0",
       "xunit >= 2.4.2",
+      "xunit.analyzers >= 1.1.0",
       "xunit.runner.visualstudio >= 2.4.5"
     ]
   },
@@ -5542,7 +5578,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj"
+            },
+            "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\ServiceContracts\\ServiceContracts.csproj": {
+              "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\ServiceContracts\\ServiceContracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5568,6 +5611,10 @@
           "xunit": {
             "target": "Package",
             "version": "[2.4.2, )"
+          },
+          "xunit.analyzers": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "xunit.runner.visualstudio": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

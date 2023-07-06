@@ -2,33 +2,28 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "xunit.analyzers/1.1.0": {
-        "type": "package"
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "xunit.analyzers/1.1.0": {
-      "sha512": "pFgSns6v+apWOqKaMpbi7LG7iHy9Dmhz54ySJKnn2f8jsArRsnOXf0Naqxy2+g0Q8YI7xhkfxT6YVoY+4GcQFg==",
-      "type": "package",
-      "path": "xunit.analyzers/1.1.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "_content/logo-128-transparent.png",
-        "analyzers/dotnet/cs/xunit.analyzers.dll",
-        "analyzers/dotnet/cs/xunit.analyzers.fixes.dll",
-        "tools/install.ps1",
-        "tools/uninstall.ps1",
-        "xunit.analyzers.1.1.0.nupkg.sha512",
-        "xunit.analyzers.nuspec"
-      ]
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "xunit.analyzers >= 1.1.0"
+      "Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -37,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj",
-      "projectName": "CRUDExample",
-      "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj",
+      "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\ServiceContracts\\ServiceContracts.csproj",
+      "projectName": "ServiceContracts",
+      "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\ServiceContracts\\ServiceContracts.csproj",
       "packagesPath": "C:\\Users\\orran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\obj\\",
+      "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\ServiceContracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\orran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,13 +47,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -70,12 +68,6 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
-        "dependencies": {
-          "xunit.analyzers": {
-            "target": "Package",
-            "version": "[1.1.0, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -88,9 +80,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

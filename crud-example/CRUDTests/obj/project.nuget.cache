@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gQ77I0CxwERpzmgTp4Z41hxA/WiXgfK9iulCnGhQ3wtil6FDGwUTkT70/uH1KVWzVxQwmDWFW2HMSJoxCtmwjg==",
+  "dgSpecHash": "39l+oXkI2d1gTO/aMdv+L5cFgcsOXI1ftEHYDW745ugz7uuInQWaNqHmmrL92Ck13esPKa/ylSmzNF+LabRqqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDTests\\CRUDTests.csproj",
   "expectedPackageFiles": [
@@ -87,7 +87,7 @@
     "C:\\Users\\orran\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\orran\\.nuget\\packages\\xunit\\2.4.2\\xunit.2.4.2.nupkg.sha512",
     "C:\\Users\\orran\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
-    "C:\\Users\\orran\\.nuget\\packages\\xunit.analyzers\\1.0.0\\xunit.analyzers.1.0.0.nupkg.sha512",
+    "C:\\Users\\orran\\.nuget\\packages\\xunit.analyzers\\1.1.0\\xunit.analyzers.1.1.0.nupkg.sha512",
     "C:\\Users\\orran\\.nuget\\packages\\xunit.assert\\2.4.2\\xunit.assert.2.4.2.nupkg.sha512",
     "C:\\Users\\orran\\.nuget\\packages\\xunit.core\\2.4.2\\xunit.core.2.4.2.nupkg.sha512",
     "C:\\Users\\orran\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",

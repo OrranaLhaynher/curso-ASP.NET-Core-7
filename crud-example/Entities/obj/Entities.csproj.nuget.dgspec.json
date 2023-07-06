@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj": {}
+    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj": {
+    "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj",
-        "projectName": "CRUDExample",
-        "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj",
+        "projectUniqueName": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\orran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\obj\\",
+        "outputPath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\orran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,12 +39,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "xunit.analyzers": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -58,9 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

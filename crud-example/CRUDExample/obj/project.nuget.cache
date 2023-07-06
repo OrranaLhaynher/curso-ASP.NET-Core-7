@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TjGHVRjjjACfQWwa2Pw54HetLK61iHmX5SQE6yBl7QaDTqC1T9kLk1PdDSu/5G0a2uJWsLhLC+oMad0+yqD9aw==",
+  "dgSpecHash": "ZyJoESg4+/Rm0Ix0pwZXGf5lyA75gOPBz+6GW5SOLu1a/IaLDo/lk/wH9SDTMLNA0qj7ek0RsMq0nEKdAyHgrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\orran\\Documents\\GitHub\\curso-ASP.NET-Core-7\\crud-example\\CRUDExample\\CRUDExample.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\orran\\.nuget\\packages\\xunit.analyzers\\1.1.0\\xunit.analyzers.1.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

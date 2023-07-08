@@ -14,6 +14,7 @@ namespace CRUDTests
             _countriesService = new CountriesService();
         }
 
+        #region AddCountry
         [Fact]
         public void AddCountry_IsNull()
         {
@@ -78,9 +79,62 @@ namespace CRUDTests
 
             //Act
             CountryResponse response = _countriesService.AddCountry(countryAddRequest);
+            List<CountryResponse> countriesList = _countriesService.GetAllCountries();
 
             //Assert
             Assert.True(response.CountryId != Guid.Empty);
+            Assert.Contains(response, countriesList);
         }
+
+        #endregion
+
+        #region GetAllCountries
+        [Fact]
+        public void GetAllCountries_EmptyList()
+        {
+            //Act
+            List<CountryResponse> responseList = _countriesService.GetAllCountries();
+
+            //Assert
+            Assert.Empty(responseList);
+        }
+
+        [Fact]
+        public void GetAllCountries_AddFewCountries()
+        {
+            //Act
+            List<CountryAddRequest> requestList = new List<CountryAddRequest>()
+            {
+                new CountryAddRequest()
+                {
+                    CountryName = "USA"
+                },
+                new CountryAddRequest()
+                {
+                    CountryName = "Japan"
+                },
+                new CountryAddRequest()
+                {
+                    CountryName = "Brazil"
+                }
+            };
+
+            List<CountryResponse> responseList = new List<CountryResponse>();
+
+            foreach (CountryAddRequest country in requestList)
+            {
+                responseList.Add(_countriesService.AddCountry(country));
+            }
+
+            List<CountryResponse> countriesResponseList = _countriesService.GetAllCountries();
+
+            foreach(CountryResponse expectedCountry in  responseList)
+            {
+                //Assert
+                Assert.Contains(expectedCountry, countriesResponseList);
+            }
+         
+        }
+        #endregion
     }
 }

@@ -1,3 +1,4 @@
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\CoverletSourceRootsMapping
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\testhost.dll
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\testhost.exe
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -86,6 +87,12 @@ C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\Entities.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\ServiceContracts.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\Services.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\Entities.pdb
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\ServiceContracts.pdb
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\bin\Debug\net7.0\Services.pdb
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\obj\Debug\net7.0\CRUDTests.csproj.AssemblyReference.cache
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\obj\Debug\net7.0\CRUDTests.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\CRUDTests\obj\Debug\net7.0\CRUDTests.AssemblyInfoInputs.cache

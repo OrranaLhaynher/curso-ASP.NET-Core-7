@@ -1,0 +1,15 @@
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\bin\Debug\net7.0\ServiceContracts.deps.json
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\bin\Debug\net7.0\ServiceContracts.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\bin\Debug\net7.0\ServiceContracts.pdb
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\bin\Debug\net7.0\Entities.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\bin\Debug\net7.0\Entities.pdb
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.csproj.AssemblyReference.cache
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.AssemblyInfoInputs.cache
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.AssemblyInfo.cs
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.csproj.CoreCompileInputs.cache
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.csproj.CopyComplete
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\refint\ServiceContracts.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ServiceContracts.pdb
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\ServiceContracts\obj\Debug\net7.0\ref\ServiceContracts.dll

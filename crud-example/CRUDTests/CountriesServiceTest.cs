@@ -85,7 +85,6 @@ namespace CRUDTests
             Assert.True(response.CountryId != Guid.Empty);
             Assert.Contains(response, countriesList);
         }
-
         #endregion
 
         #region GetAllCountries
@@ -134,6 +133,38 @@ namespace CRUDTests
                 Assert.Contains(expectedCountry, countriesResponseList);
             }
          
+        }
+        #endregion
+
+        #region GetCountry
+        [Fact]
+        public void GetCountry_NullCountryId()
+        {
+            //Arrange
+            Guid? id = null;
+
+            //Act
+            CountryResponse? response = _countriesService.GetCountry(id);
+
+            //Assert
+            Assert.Null(response);
+        }
+
+        [Fact]
+        public void GetCountry_ProperCountryId() 
+        {
+            //Arrange
+            CountryAddRequest countryAddRequest = new CountryAddRequest(){
+                CountryName = "Brazil"
+            };
+
+            CountryResponse countryResponse = _countriesService.AddCountry(countryAddRequest);
+
+            //Act
+            CountryResponse? countryIdResponse = _countriesService.GetCountry(countryResponse.CountryId);
+
+            //Assert
+            Assert.Equal(countryResponse, countryIdResponse);
         }
         #endregion
     }

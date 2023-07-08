@@ -1,7 +1,7 @@
 ﻿using Entities;
 using ServiceContracts;
 using ServiceContracts.DTO;
-using System.Diagnostics.Metrics;
+using Services.Helpers;
 
 namespace Services
 {
@@ -31,10 +31,7 @@ namespace Services
                 throw new ArgumentNullException(nameof(personAddRequest));
             }
 
-            if (string.IsNullOrEmpty(personAddRequest.PersonName))
-            {
-                throw new ArgumentException("Person name cannot be blank");
-            }
+            ValidationHelper.ModelValidation(personAddRequest);
 
             Person person = personAddRequest!.ToPerson();
 

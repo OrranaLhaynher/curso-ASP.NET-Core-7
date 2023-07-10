@@ -43,10 +43,10 @@ namespace Services
 
         public List<PersonResponse> GetAllPersons()
         {
-            throw new NotImplementedException();
+            return _persons.Select(person => person.ToPersonResponse()).ToList();
         }
 
-        public PersonResponse? GetPerson(Guid? PersonId)
+        public PersonResponse? GetPerson(Guid? personId)
         {
             throw new NotImplementedException();
         }

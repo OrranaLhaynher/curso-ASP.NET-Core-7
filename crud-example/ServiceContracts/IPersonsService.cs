@@ -6,6 +6,6 @@ namespace ServiceContracts
     {
         PersonResponse AddPerson(PersonAddRequest? personAddRequest);
         List<PersonResponse> GetAllPersons();
-        PersonResponse? GetPerson(Guid? PersonId);
+        PersonResponse? GetPerson(Guid? personId);
     }
 }

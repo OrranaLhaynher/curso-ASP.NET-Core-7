@@ -3,6 +3,7 @@ using ServiceContracts.DTO;
 using Services;
 using ServiceContracts.Enums;
 using Xunit.Abstractions;
+using Entities;
 
 namespace CRUDTests
 {
@@ -16,6 +17,85 @@ namespace CRUDTests
             _personsService = new PersonsService();
             _countriesService = new CountriesService();
             _testOutputHelper = testOutputHelper;
+        }
+
+        public List<PersonResponse> GetPersonsList()
+        {
+            List<CountryAddRequest> countryRequestList = new List<CountryAddRequest>()
+            {
+                new CountryAddRequest()
+                {
+                    CountryName = "Brazil"
+                },
+                new CountryAddRequest()
+                {
+                    CountryName = "USA"
+                },
+                new CountryAddRequest()
+                {
+                    CountryName = "South Korea"
+                }
+            };
+
+            List<CountryResponse> countryResponseList = new List<CountryResponse>();
+
+            foreach (CountryAddRequest country in countryRequestList)
+            {
+                countryResponseList.Add(_countriesService.AddCountry(country));
+            }
+            
+            List<PersonAddRequest> requestList = new List<PersonAddRequest>()
+            {
+                new PersonAddRequest()
+                {
+                    PersonName = "Orrana",
+                    PersonEmail = "orrana@example.com",
+                    DateOfBirth = DateTime.Parse("1998-06-02"),
+                    Gender = GenderOptions.Female,
+                    CountryId = countryResponseList[0].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = true
+                },
+                new PersonAddRequest()
+                {
+                    PersonName = "Juliana",
+                    PersonEmail = "juliana@example.com",
+                    DateOfBirth = DateTime.Parse("1992-02-06"),
+                    Gender = GenderOptions.Female,
+                    CountryId = countryResponseList[0].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = true
+                },
+                new PersonAddRequest()
+                {
+                    PersonName = "Osvaldo",
+                    PersonEmail = "osvaldo@example.com",
+                    DateOfBirth = DateTime.Parse("1964-06-14"),
+                    Gender = GenderOptions.Male,
+                    CountryId = countryResponseList[1].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = false
+                },
+                new PersonAddRequest()
+                {
+                    PersonName = "Maria",
+                    PersonEmail = "maria@example.com",
+                    DateOfBirth = DateTime.Parse("1965-12-15"),
+                    Gender = GenderOptions.Female,
+                    CountryId = countryResponseList[2].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = false
+                }
+            };
+
+            List<PersonResponse> responseList = new List<PersonResponse>();
+
+            foreach (PersonAddRequest person in requestList)
+            {
+                responseList.Add(_personsService.AddPerson(person));
+            }
+
+            return responseList;
         }
 
         #region AddPerson
@@ -87,69 +167,7 @@ namespace CRUDTests
         [Fact]
         public void GetAllPersons_AddFewPersons() {
             //Act
-            List<CountryAddRequest> countryRequestList = new List<CountryAddRequest>()
-            {
-                new CountryAddRequest()
-                {
-                    CountryName = "Brazil"
-                },
-                new CountryAddRequest()
-                {
-                    CountryName = "USA"
-                },
-                new CountryAddRequest()
-                {
-                    CountryName = "South Korea"
-                }
-            };
-
-            List<CountryResponse> countryResponseList = new List<CountryResponse>();
-
-            foreach (CountryAddRequest country in countryRequestList)
-            {
-                countryResponseList.Add(_countriesService.AddCountry(country));
-            }
-
-            List<PersonAddRequest> requestList = new List<PersonAddRequest>()
-            {
-                new PersonAddRequest()
-                {
-                    PersonName = "Orrana",
-                    PersonEmail = "orrana@example.com",
-                    DateOfBirth = DateTime.Parse("1998-06-02"),
-                    Gender = GenderOptions.Female,
-                    CountryId = countryResponseList[0].CountryId,
-                    Address = "Jaicos, Piaui",
-                    ReceiveNewsLetters = true
-                },
-                new PersonAddRequest()
-                {
-                    PersonName = "Osvaldo",
-                    PersonEmail = "osvaldo@example.com",
-                    DateOfBirth = DateTime.Parse("1964-06-14"),
-                    Gender = GenderOptions.Male,
-                    CountryId = countryResponseList[1].CountryId,
-                    Address = "Jaicos, Piaui",
-                    ReceiveNewsLetters = false
-                },
-                new PersonAddRequest()
-                {
-                    PersonName = "Maria",
-                    PersonEmail = "maria@example.com",
-                    DateOfBirth = DateTime.Parse("1965-12-15"),
-                    Gender = GenderOptions.Female,
-                    CountryId = countryResponseList[2].CountryId,
-                    Address = "Jaicos, Piaui",
-                    ReceiveNewsLetters = false
-                }
-            };
-
-            List<PersonResponse> responseList = new List<PersonResponse>();
-
-            foreach (PersonAddRequest person in requestList)
-            {
-                responseList.Add(_personsService.AddPerson(person));
-            }
+            List<PersonResponse> responseList = GetPersonsList();
 
             _testOutputHelper.WriteLine("Expected: ");
             foreach(PersonResponse response in responseList)
@@ -213,6 +231,68 @@ namespace CRUDTests
 
             //Assert
             Assert.Equal(personResponse, personIdResponse);
+        }
+        #endregion
+
+        #region GetFilteredPersons
+        [Fact]
+        public void GetFilteredPersons_EmptySearchText()
+        {
+            //Act
+            List<PersonResponse> responseList = GetPersonsList();
+
+            _testOutputHelper.WriteLine("Expected: ");
+            foreach (PersonResponse response in responseList)
+            {
+                _testOutputHelper.WriteLine(response.ToString());
+            }
+
+            List<PersonResponse> personsResponseList = _personsService.GetFilteredPersons(nameof(Person.PersonName), "");
+
+            _testOutputHelper.WriteLine("Actual: ");
+            foreach (PersonResponse response in personsResponseList)
+            {
+                _testOutputHelper.WriteLine(response.ToString());
+            }
+
+            foreach (PersonResponse expectedPerson in responseList)
+            {
+                //Assert
+                Assert.Contains(expectedPerson, personsResponseList);
+            }
+        }
+
+        [Fact]
+        public void GetFilteredPersons_SearchByPersonName()
+        {
+            //Act
+            List<PersonResponse> responseList = GetPersonsList();
+
+            _testOutputHelper.WriteLine("Expected: ");
+            foreach (PersonResponse response in responseList)
+            {
+                _testOutputHelper.WriteLine(response.ToString());
+            }
+
+            List<PersonResponse> personsResponseList = _personsService.GetFilteredPersons(nameof(Person.PersonName), "ana");
+
+            _testOutputHelper.WriteLine("Actual: ");
+            foreach (PersonResponse response in personsResponseList)
+            {
+                _testOutputHelper.WriteLine(response.ToString());
+            }
+
+            foreach (PersonResponse expectedPerson in responseList)
+            {
+                if (expectedPerson.PersonName != null)
+                {
+                    if (expectedPerson.PersonName.Contains("ana", StringComparison.OrdinalIgnoreCase))
+                    {
+                        //Assert
+                        Assert.Contains(expectedPerson, personsResponseList);
+                    }
+                }
+            }
         }
         #endregion
     }

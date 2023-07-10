@@ -44,7 +44,7 @@ namespace ServiceContracts.DTO
             return $"Person Id - {PersonId}, Person name - {PersonName}, Person email - {PersonEmail}, Date of birth - {DateOfBirth?.ToString("dd-MM-yyyy")}, Gender - {Gender}, Country Id - {CountryId}, Address - {Address}, Receive newsletters - {ReceiveNewsLetters}";
         }
 
-        public PersonUpdateRequest ToPersonUpdateRequest(this Person person)
+        public PersonUpdateRequest ToPersonUpdateRequest()
         {
             return new PersonUpdateRequest()
             {

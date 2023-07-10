@@ -19,7 +19,7 @@ namespace CRUDTests
             _testOutputHelper = testOutputHelper;
         }
 
-        public List<PersonResponse> GetPersonsList()
+        public List<CountryResponse> GetCountriesList()
         {
             List<CountryAddRequest> countryRequestList = new List<CountryAddRequest>()
             {
@@ -43,6 +43,12 @@ namespace CRUDTests
             {
                 countryResponseList.Add(_countriesService.AddCountry(country));
             }
+
+            return countryResponseList;
+        }
+
+        public List<PersonResponse> GetPersonsList(List<CountryResponse> countryResponseList)
+        {
             
             List<PersonAddRequest> requestList = new List<PersonAddRequest>()
             {
@@ -167,7 +173,8 @@ namespace CRUDTests
         [Fact]
         public void GetAllPersons_AddFewPersons() {
             //Act
-            List<PersonResponse> responseList = GetPersonsList();
+            List<CountryResponse> countriesResponseList = GetCountriesList();
+            List<PersonResponse> responseList = GetPersonsList(countriesResponseList);
 
             _testOutputHelper.WriteLine("Expected: ");
             foreach(PersonResponse response in responseList)
@@ -239,7 +246,8 @@ namespace CRUDTests
         public void GetFilteredPersons_EmptySearchText()
         {
             //Act
-            List<PersonResponse> responseList = GetPersonsList();
+            List<CountryResponse> countriesResponseList = GetCountriesList();
+            List<PersonResponse> responseList = GetPersonsList(countriesResponseList);
 
             _testOutputHelper.WriteLine("Expected: ");
             foreach (PersonResponse response in responseList)
@@ -266,7 +274,8 @@ namespace CRUDTests
         public void GetFilteredPersons_SearchByPersonName()
         {
             //Act
-            List<PersonResponse> responseList = GetPersonsList();
+            List<CountryResponse> countriesResponseList = GetCountriesList();
+            List<PersonResponse> responseList = GetPersonsList(countriesResponseList);
 
             _testOutputHelper.WriteLine("Expected: ");
             foreach (PersonResponse response in responseList)
@@ -301,7 +310,8 @@ namespace CRUDTests
         public void GetSortedPersons_SortByPersonName()
         {
             //Act
-            List<PersonResponse> responseList = GetPersonsList();
+            List<CountryResponse> countriesResponseList = GetCountriesList();
+            List<PersonResponse> responseList = GetPersonsList(countriesResponseList);
 
             _testOutputHelper.WriteLine("Expected: ");
             foreach (PersonResponse response in responseList)
@@ -324,6 +334,84 @@ namespace CRUDTests
             {
                 Assert.Equal(responseList[i], personsResponseList[i]);
             }
+        }
+        #endregion
+
+        #region UpdatePerson
+        [Fact]
+        public void UpdatePerson_NullPerson()
+        {
+            //Arrange
+            PersonUpdateRequest? personUpdateRequest = null;
+
+            //Assert
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                //Act
+                _personsService.UpdatePerson(personUpdateRequest);
+            });
+        }
+
+        [Fact]
+        public void UpdatePerson_InvalidPersonId()
+        {
+            //Arrange
+            PersonUpdateRequest? personUpdateRequest = new PersonUpdateRequest()
+            {
+                PersonId = Guid.NewGuid()
+            };
+
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                _personsService.UpdatePerson(personUpdateRequest);
+            });
+        }
+
+        [Fact]
+        public void UpdatePerson_PersonNameIsNull()
+        {
+            //Arrange
+            List<CountryResponse> countriesResponseList = GetCountriesList();
+            PersonAddRequest personAddRequest = new PersonAddRequest()
+            {
+                PersonName = "Orrana",
+                PersonEmail = "example@algo.com",
+                CountryId = countriesResponseList[0].CountryId
+            };
+
+            PersonResponse personResponse = _personsService.AddPerson(personAddRequest);
+
+            PersonUpdateRequest? personUpdateRequest = personResponse.ToPersonUpdateRequest();
+            personUpdateRequest.PersonName = null;
+
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                _personsService.UpdatePerson(personUpdateRequest);
+            });
+        }
+
+        [Fact]
+        public void UpdatePerson_ProperUpdate()
+        {
+            //Arrange
+            List<CountryResponse> countriesResponseList = GetCountriesList();
+            List<PersonResponse> personResponseList = GetPersonsList(countriesResponseList);
+
+            PersonUpdateRequest? personUpdateRequest = personResponseList[0].ToPersonUpdateRequest();
+            personUpdateRequest.PersonName = "Lucia";
+            personUpdateRequest.PersonEmail = "lucia@example.com";
+            personUpdateRequest.Address = "Piaui";
+
+            //Act
+            PersonResponse personUpdateResponse = _personsService.UpdatePerson(personUpdateRequest);
+            PersonResponse? actualPerson = _personsService.GetPerson(personUpdateResponse.PersonId);
+
+            //Assert
+            Assert.Equal(actualPerson, personUpdateResponse);
         }
         #endregion
     }

@@ -80,6 +80,82 @@ namespace CRUDTests
             //Assert
             Assert.Empty(responseList);
         }
+
+        [Fact]
+        public void GetAllPersons_AddFewPersons() {
+            //Act
+            List<CountryAddRequest> countryRequestList = new List<CountryAddRequest>()
+            {
+                new CountryAddRequest()
+                {
+                    CountryName = "Brazil"
+                },
+                new CountryAddRequest()
+                {
+                    CountryName = "USA"
+                },
+                new CountryAddRequest()
+                {
+                    CountryName = "South Korea"
+                }
+            };
+
+            List<CountryResponse> countryResponseList = new List<CountryResponse>();
+
+            foreach (CountryAddRequest country in countryRequestList)
+            {
+                countryResponseList.Add(_countriesService.AddCountry(country));
+            }
+
+            List<PersonAddRequest> requestList = new List<PersonAddRequest>()
+            {
+                new PersonAddRequest()
+                {
+                    PersonName = "Orrana",
+                    PersonEmail = "orrana@example.com",
+                    DateOfBirth = DateTime.Parse("1998-06-02"),
+                    Gender = GenderOptions.Female,
+                    CountryId = countryResponseList[0].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = true
+                },
+                new PersonAddRequest()
+                {
+                    PersonName = "Osvaldo",
+                    PersonEmail = "osvaldo@example.com",
+                    DateOfBirth = DateTime.Parse("1964-06-14"),
+                    Gender = GenderOptions.Male,
+                    CountryId = countryResponseList[1].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = false
+                },
+                new PersonAddRequest()
+                {
+                    PersonName = "Maria",
+                    PersonEmail = "maria@example.com",
+                    DateOfBirth = DateTime.Parse("1965-12-15"),
+                    Gender = GenderOptions.Female,
+                    CountryId = countryResponseList[2].CountryId,
+                    Address = "Jaicos, Piaui",
+                    ReceiveNewsLetters = false
+                }
+            };
+
+            List<PersonResponse> responseList = new List<PersonResponse>();
+
+            foreach (PersonAddRequest person in requestList)
+            {
+                responseList.Add(_personsService.AddPerson(person));
+            }
+
+            List<PersonResponse> personsResponseList = _personsService.GetAllPersons();
+
+            foreach (PersonResponse expectedPerson in responseList)
+            {
+                //Assert
+                Assert.Contains(expectedPerson, personsResponseList);
+            }
+        }
         #endregion
 
         #region GetPerson

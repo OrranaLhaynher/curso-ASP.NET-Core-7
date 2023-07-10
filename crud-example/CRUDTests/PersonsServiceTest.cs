@@ -295,5 +295,36 @@ namespace CRUDTests
             }
         }
         #endregion
+
+        #region GetSortedPersons
+        [Fact]
+        public void GetSortedPersons_SortByPersonName()
+        {
+            //Act
+            List<PersonResponse> responseList = GetPersonsList();
+
+            _testOutputHelper.WriteLine("Expected: ");
+            foreach (PersonResponse response in responseList)
+            {
+                _testOutputHelper.WriteLine(response.ToString());
+            }
+
+            List<PersonResponse> allPersons = _personsService.GetAllPersons();
+            List<PersonResponse> personsResponseList = _personsService.GetSortedPersons(allPersons, nameof(Person.PersonName), SortOrderOptions.Descending);
+
+            _testOutputHelper.WriteLine("Actual: ");
+            foreach (PersonResponse response in personsResponseList)
+            {
+                _testOutputHelper.WriteLine(response.ToString());
+            }
+
+            responseList = responseList.OrderByDescending(temp => temp.PersonName).ToList();
+
+            for (var i = 0; i < responseList.Count(); i++)
+            {
+                Assert.Equal(responseList[i], personsResponseList[i]);
+            }
+        }
+        #endregion
     }
 }

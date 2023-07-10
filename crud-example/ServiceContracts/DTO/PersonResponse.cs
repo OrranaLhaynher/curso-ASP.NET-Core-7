@@ -1,4 +1,5 @@
 ﻿using Entities;
+using ServiceContracts.Enums;
 
 namespace ServiceContracts.DTO
 {
@@ -41,6 +42,21 @@ namespace ServiceContracts.DTO
         public override string ToString()
         {
             return $"Person Id - {PersonId}, Person name - {PersonName}, Person email - {PersonEmail}, Date of birth - {DateOfBirth?.ToString("dd-MM-yyyy")}, Gender - {Gender}, Country Id - {CountryId}, Address - {Address}, Receive newsletters - {ReceiveNewsLetters}";
+        }
+
+        public PersonUpdateRequest ToPersonUpdateRequest(this Person person)
+        {
+            return new PersonUpdateRequest()
+            {
+                PersonId = PersonId,
+                PersonName = PersonName,
+                PersonEmail = PersonEmail,
+                DateOfBirth = DateOfBirth,
+                Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions), Gender, true),
+                CountryId = CountryId,
+                Address = Address,
+                ReceiveNewsLetters = ReceiveNewsLetters
+            };
         }
     }
 

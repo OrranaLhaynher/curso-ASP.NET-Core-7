@@ -3,6 +3,7 @@ using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
 using Services.Helpers;
+using System.Linq.Expressions;
 
 namespace Services
 {
@@ -105,7 +106,42 @@ namespace Services
 
         public List<PersonResponse> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(sortBy)) return allPersons;
+
+            List<PersonResponse> sortedPersons = (sortBy, sortOrder) switch
+            {
+                //PersonName
+                (nameof(PersonResponse.PersonName), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.PersonName, StringComparer.OrdinalIgnoreCase).ToList(),
+                (nameof(PersonResponse.PersonName), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.PersonName, StringComparer.OrdinalIgnoreCase).ToList(),
+
+                //PersonEmail
+                (nameof(PersonResponse.PersonEmail), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.PersonEmail, StringComparer.OrdinalIgnoreCase).ToList(),
+                (nameof(PersonResponse.PersonEmail), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.PersonEmail, StringComparer.OrdinalIgnoreCase).ToList(),
+
+                //DateOfBirth
+                (nameof(PersonResponse.DateOfBirth), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.DateOfBirth).ToList(),
+                (nameof(PersonResponse.DateOfBirth), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.DateOfBirth).ToList(),
+
+                //Age
+                (nameof(PersonResponse.Age), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.Age).ToList(),
+                (nameof(PersonResponse.Age), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.Age).ToList(),
+
+                //Gender
+                (nameof(PersonResponse.Gender), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.Gender, StringComparer.OrdinalIgnoreCase).ToList(),
+                (nameof(PersonResponse.Gender), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.Gender, StringComparer.OrdinalIgnoreCase).ToList(),
+
+                //Country
+                (nameof(PersonResponse.Country), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.Country, StringComparer.OrdinalIgnoreCase).ToList(),
+                (nameof(PersonResponse.Country), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.Country, StringComparer.OrdinalIgnoreCase).ToList(),
+
+                //Address
+                (nameof(PersonResponse.Address), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.Address, StringComparer.OrdinalIgnoreCase).ToList(),
+                (nameof(PersonResponse.Address), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.Address, StringComparer.OrdinalIgnoreCase).ToList(),
+
+                _ => allPersons
+            };
+
+            return sortedPersons;
         }
     }
 }

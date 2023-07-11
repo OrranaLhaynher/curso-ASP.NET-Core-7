@@ -8,13 +8,37 @@
     ".NETCoreApp,Version=v7.0": {
       "CRUDExample/1.0.0": {
         "dependencies": {
+          "Entities": "1.0.0",
+          "ServiceContracts": "1.0.0",
+          "Services": "1.0.0",
           "xunit.analyzers": "1.1.0"
         },
         "runtime": {
           "CRUDExample.dll": {}
         }
       },
-      "xunit.analyzers/1.1.0": {}
+      "xunit.analyzers/1.1.0": {},
+      "Entities/1.0.0": {
+        "runtime": {
+          "Entities.dll": {}
+        }
+      },
+      "ServiceContracts/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "ServiceContracts.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "dependencies": {
+          "ServiceContracts": "1.0.0"
+        },
+        "runtime": {
+          "Services.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -29,6 +53,21 @@
       "sha512": "sha512-pFgSns6v+apWOqKaMpbi7LG7iHy9Dmhz54ySJKnn2f8jsArRsnOXf0Naqxy2+g0Q8YI7xhkfxT6YVoY+4GcQFg==",
       "path": "xunit.analyzers/1.1.0",
       "hashPath": "xunit.analyzers.1.1.0.nupkg.sha512"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ServiceContracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

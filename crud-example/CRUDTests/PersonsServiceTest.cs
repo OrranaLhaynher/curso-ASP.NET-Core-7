@@ -415,5 +415,25 @@ namespace CRUDTests
             Assert.Equal(actualPerson, personUpdateResponse);
         }
         #endregion
+
+        #region DeletePerson
+        [Fact]
+        public void DeletePerson_ValidPersonId() {
+            List<CountryResponse> countriesList = GetCountriesList();
+            List<PersonResponse> personsList = GetPersonsList(countriesList);
+
+            bool isDeleted = _personsService.DeletePerson(personsList[0].PersonId);
+
+            Assert.True(isDeleted);
+        }
+
+        [Fact]
+        public void DeletePerson_InvalidPersonId()
+        {
+            bool isDeleted = _personsService.DeletePerson(Guid.NewGuid());
+
+            Assert.False(isDeleted);
+        }
+        #endregion
     }
 }

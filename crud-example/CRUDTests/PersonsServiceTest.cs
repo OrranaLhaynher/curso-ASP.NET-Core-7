@@ -378,14 +378,15 @@ namespace CRUDTests
             {
                 PersonName = "Orrana",
                 PersonEmail = "example@algo.com",
-                CountryId = countriesResponseList[0].CountryId
+                CountryId = countriesResponseList[0].CountryId,
+                Gender = GenderOptions.Female
             };
 
             PersonResponse personResponse = _personsService.AddPerson(personAddRequest);
 
             PersonUpdateRequest? personUpdateRequest = personResponse.ToPersonUpdateRequest();
             personUpdateRequest.PersonName = null;
-
+        
             //Assert
             Assert.Throws<ArgumentException>(() =>
             {

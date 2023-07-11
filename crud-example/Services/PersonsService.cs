@@ -146,7 +146,26 @@ namespace Services
 
         public PersonResponse UpdatePerson(PersonUpdateRequest? personUpdateRequest)
         {
-            throw new NotImplementedException();
+            if (personUpdateRequest == null)
+            {
+                throw new ArgumentNullException(nameof(Person));
+            }
+
+            ValidationHelper.ModelValidation(personUpdateRequest);
+
+            Person? person = _persons.FirstOrDefault(temp => temp.PersonId == personUpdateRequest.PersonId);
+            
+            if (person == null) throw new ArgumentException("Given person id does not exist");
+
+            person.PersonName = personUpdateRequest.PersonName;
+            person.PersonEmail = personUpdateRequest.PersonEmail;
+            person.DateOfBirth = personUpdateRequest.DateOfBirth;
+            person.CountryId = personUpdateRequest.CountryId;
+            person.Address = personUpdateRequest.Address;
+            person.Gender = personUpdateRequest.Gender.ToString();
+            person.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
+
+            return person.ToPersonResponse();
         }
     }
 }

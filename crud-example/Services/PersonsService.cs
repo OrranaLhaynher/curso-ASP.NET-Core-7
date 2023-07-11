@@ -3,6 +3,7 @@ using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
 using Services.Helpers;
+using System.Drawing;
 using System.Linq.Expressions;
 
 namespace Services
@@ -12,10 +13,127 @@ namespace Services
         private readonly List<Person> _persons;
         private readonly ICountriesService _countriesService;
 
-        public PersonsService()
+        public PersonsService(bool initialize = true)
         {
             _persons = new List<Person>();
             _countriesService = new CountriesService();
+
+            if (initialize)
+            {
+                _persons.AddRange(new List<Person>()
+                {
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("35B5E327-B767-411A-BFC0-CDB6D00EAD5C"),
+                        PersonName = "Raimundo",
+                        PersonEmail = "rarnow0@squarespace.com",
+                        Gender = "Male",
+                        DateOfBirth = DateTime.Parse("1928-11-19"),
+                        CountryId = Guid.Parse("E94BB413-37ED-462F-ABAC-67D52A611A0F"),
+                        Address = "0420 Prairie Rose Point",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("3AF8FE58-B51F-4336-9A79-26A4A353A3AA"),
+                        PersonName = "Arvin",
+                        PersonEmail = "akittley1@aol.com",
+                        Gender = "Male",
+                        DateOfBirth = DateTime.Parse("1982-04-30"),
+                        CountryId = Guid.Parse("8F89DBBE-E372-4B88-81C1-8086268DDEDF"),
+                        Address = "2 Farragut Center",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("64EF15C8-14C1-4932-BCC5-57B46B074360"),
+                        PersonName = "Gaylor",
+                        PersonEmail = "gdegan3@ebay.co.uk",
+                        Gender = "Male",
+                        DateOfBirth = DateTime.Parse("2002-09-05"),
+                        CountryId = Guid.Parse("F477EECF-2455-47E0-B659-8F17435FE836"),
+                        Address = "7713 Green Ridge Alley",
+                        ReceiveNewsLetters = false
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("6578A160-78D1-43EB-B74F-5113DD56AAC5"),
+                        PersonName = "Betteann",
+                        PersonEmail = "bianelli4@oracle.com",
+                        Gender = "Female",
+                        DateOfBirth = DateTime.Parse("1919-04-22"),
+                        CountryId = Guid.Parse("91E48BE1-8B81-4BA9-AC22-7826CBF4DEE9"),
+                        Address = "990 Carberry Junction",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("954A3720-45C9-4EDE-9425-064C6C37FA1F"),
+                        PersonName = "Gaylor",
+                        PersonEmail = "ggellier5@yolasite.com",
+                        Gender = "Nonbinary",
+                        DateOfBirth = DateTime.Parse("2005-03-21"),
+                        CountryId = Guid.Parse("DED8A45E-FFB9-44CF-90CF-5515ECE783EA"),
+                        Address = "5 Goodland Place",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("73ECC7ED-2932-4F3E-9D86-AC4429C86D15"),
+                        PersonName = "Hubey",
+                        PersonEmail = "hduffill6@behance.net",
+                        Gender = "Male",
+                        DateOfBirth = DateTime.Parse("1971-12-24"),
+                        CountryId = Guid.Parse("FBF748CB-E4CB-4809-A997-011FE02373F1"),
+                        Address = "77 Village Green Plaza",
+                        ReceiveNewsLetters = false
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("7FCF7A9D-A693-4BD4-8124-38FF35EC1500"),
+                        PersonName = "Rafaellle",
+                        PersonEmail = "rcharteris7@furl.net",
+                        Gender = "Nonbinary",
+                        DateOfBirth = DateTime.Parse("1990-01-10"),
+                        CountryId = Guid.Parse("91E48BE1-8B81-4BA9-AC22-7826CBF4DEE9"),
+                        Address = "9 Grim Way",
+                        ReceiveNewsLetters = true
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("1D1DC2A3-6C56-49DC-86D2-44C9FC7F858E"),
+                        PersonName = "Gwendolyn",
+                        PersonEmail = "gloghan2@vistaprint.com",
+                        Gender = "Female",
+                        DateOfBirth = DateTime.Parse("1981-04-30"),
+                        CountryId = Guid.Parse("FBF748CB-E4CB-4809-A997-011FE02373F1"),
+                        Address = "2 Homewood Junction",
+                        ReceiveNewsLetters = false
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("AE21E706-07A7-4DE7-B73C-449284D3D2F4"),
+                        PersonName = "Selestina",
+                        PersonEmail = "sclemensen8@cam.ac.uk",
+                        Gender = "Female",
+                        DateOfBirth = DateTime.Parse("1968-02-20"),
+                        CountryId = Guid.Parse("E94BB413-37ED-462F-ABAC-67D52A611A0F"),
+                        Address = "10884 Bartillon Street",
+                        ReceiveNewsLetters = false
+                    },
+                    new Person()
+                    {
+                        PersonId = Guid.Parse("2325F7D8-468E-4089-B43F-EB6E40CE3851"),
+                        PersonName = "Bernard",
+                        PersonEmail = "bglassup9@netscape.com",
+                        Gender = "Male",
+                        DateOfBirth = DateTime.Parse("2003-10-01"),
+                        CountryId = Guid.Parse("91E48BE1-8B81-4BA9-AC22-7826CBF4DEE9"),
+                        Address = "9104 Thierer Point",
+                        ReceiveNewsLetters = false
+                    }
+                });
+            }
         }
 
         private PersonResponse ConvertPersonToPersonResponse(Person person)

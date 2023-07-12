@@ -15,8 +15,19 @@ namespace CRUDExample.Controllers
 
         [Route("/persons/index")]
         [Route("/")]
-        public IActionResult Index()
+        public IActionResult Index(string searchBy, string searchString)
         {
+            ViewBag.SearchFields = new Dictionary<string, string>()
+            {
+                { nameof(PersonResponse.PersonName), "Name" },
+                { nameof(PersonResponse.PersonEmail), "Email" },
+                { nameof(PersonResponse.DateOfBirth), "Date of birth" },
+                { nameof(PersonResponse.Gender), "Gender" },
+                { nameof(PersonResponse.CountryId), "Country" },
+                { nameof(PersonResponse.Address), "Address" }
+            };
+
+
             List<PersonResponse> persons = _personsService.GetAllPersons();
 
             return View(persons);

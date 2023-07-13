@@ -8,10 +8,12 @@ namespace CRUDExample.Controllers
     public class PersonsController : Controller
     {
         private readonly IPersonsService _personsService;
+        private readonly ICountriesService _countriesService;
 
-        public PersonsController(IPersonsService personsService)
+        public PersonsController(IPersonsService personsService, ICountriesService countriesService)
         {
             _personsService = personsService;
+            _countriesService = countriesService;
         }
 
         [Route("/persons/index")]
@@ -40,6 +42,34 @@ namespace CRUDExample.Controllers
             ViewBag.CurrentSortOrder = sortOrder.ToString();
 
             return View(sortedPersons);
+        }
+
+        [Route("/persons/create")]
+        [HttpGet]
+        public IActionResult Create()
+        {
+            List<CountryResponse> countries = _countriesService.GetAllCountries();
+            ViewBag.Countries = countries;
+
+            return View();
+        }
+
+        [Route("/persons/create")]
+        [HttpPost]
+        public IActionResult Create(PersonAddRequest personAddRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                List<CountryResponse> countries = _countriesService.GetAllCountries();
+                ViewBag.Countries = countries;
+
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                return View();
+            }
+
+            PersonResponse person = _personsService.AddPerson(personAddRequest);
+
+            return RedirectToAction("Index", "Persons");
         }
     }
 }

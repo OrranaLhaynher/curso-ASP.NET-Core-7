@@ -163,7 +163,7 @@ namespace Services
 
         public List<PersonResponse> GetAllPersons()
         {
-            return _persons.Select(person => person.ToPersonResponse()).ToList();
+            return _persons.Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
         }
 
         public PersonResponse? GetPerson(Guid? personId)
@@ -180,7 +180,7 @@ namespace Services
                 return null;
             }
 
-            return person.ToPersonResponse();
+            return ConvertPersonToPersonResponse(person);
         }
 
         public List<PersonResponse> GetFilteredPersons(string searchBy, string? searchString)
@@ -256,6 +256,10 @@ namespace Services
                 (nameof(PersonResponse.Address), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.Address, StringComparer.OrdinalIgnoreCase).ToList(),
                 (nameof(PersonResponse.Address), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.Address, StringComparer.OrdinalIgnoreCase).ToList(),
 
+                //ReceiveNewsLetters
+                (nameof(PersonResponse.ReceiveNewsLetters), SortOrderOptions.Ascending) => allPersons.OrderBy(temp => temp.ReceiveNewsLetters).ToList(),
+                (nameof(PersonResponse.ReceiveNewsLetters), SortOrderOptions.Descending) => allPersons.OrderByDescending(temp => temp.ReceiveNewsLetters).ToList(),
+
                 _ => allPersons
             };
 
@@ -283,7 +287,7 @@ namespace Services
             person.Gender = personUpdateRequest.Gender.ToString();
             person.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
 
-            return person.ToPersonResponse();
+            return ConvertPersonToPersonResponse(person);
         }
 
         public bool DeletePerson(Guid? personId)

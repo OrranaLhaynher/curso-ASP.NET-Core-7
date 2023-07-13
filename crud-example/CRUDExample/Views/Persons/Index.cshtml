@@ -35,30 +35,67 @@
     <table class="table w-100 mt">
         <thead>
             <tr>
-                <th>
-                    <a href="~/persons/index?searchBy=@ViewBag.CurrentSearchBy&searchString=@ViewBag.CurrentSearchString&sortBy=@nameof(PersonResponse.PersonName)&sortOrder=@SortOrderOptions.Descending">Name</a>
-                </th>
-                <th>Email</th>
-                <th>Date of birth</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Country</th>
-                <th>Address</th>
-                <th>Receive newsletters</th>
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial", 
+                new ViewDataDictionary(ViewData) {
+                    {"ColumnName", nameof(PersonResponse.PersonName)},
+                    {"DisplayName", "Name"}
+                })
+
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.PersonEmail)},
+                {"DisplayName", "Email"}
+                })
+
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.DateOfBirth)},
+                {"DisplayName", "Date of birth"}
+                })
+                
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.Age)},
+                {"DisplayName", "Age"}
+                })
+
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.Gender)},
+                {"DisplayName", "Gender"}
+                })
+
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.Country)},
+                {"DisplayName", "Country"}
+                })
+
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.Address)},
+                {"DisplayName", "Address"}
+                })
+
+                @await Html.PartialAsync("_GridColumnHeaderSortPartial",
+                new ViewDataDictionary(ViewData) {
+                {"ColumnName", nameof(PersonResponse.ReceiveNewsLetters)},
+                {"DisplayName", "Receive newsletters"}
+                })
             </tr>
         </thead>
         <tbody>
             @foreach (PersonResponse person in Model)
             {
-                <tr>
-                    <td>@person.PersonName</td>
-                    <td>@person.PersonEmail</td>
-                    <td>@person.DateOfBirth?.ToString("dd-MM-yyyy")</td>
-                    <td>@person.Age</td>
-                    <td>@person.Gender</td>
-                    <td>@person.Country</td>
-                    <td>@person.Address</td>
-                    <td>@person.ReceiveNewsLetters</td>
+                <tr> 
+                    <td style="width:15%">@person.PersonName</td>
+                    <td style ="width:20%">@person.PersonEmail</td>
+                    <td style="width:13%">@person.DateOfBirth?.ToString("dd-MM-yyyy")</td>
+                    <td style="width:9%">@person.Age</td>
+                    <td style="width:9%">@person.Gender</td>
+                    <td style="width:10%">@person.Country</td>
+                    <td style="width:10%">@person.Address</td>
+                    <td style="width:10%">@person.ReceiveNewsLetters</td>
                 </tr>
             }
         </tbody>

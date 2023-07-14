@@ -14,6 +14,7 @@
             </div>
             <div class="flex-1">
                 <input asp-for="PersonName" class="form-input" /> @*Não precisa adicionar o id e o name, eles são criados automaticamente*@
+                <span asp-validation-for="PersonName" class="text-red"></span>
             </div>
         </div>
 
@@ -23,6 +24,7 @@
             </div>
             <div class="flex-1">
                 <input asp-for="PersonEmail" class="form-input" />
+                <span asp-validation-for="PersonEmail" class="text-red"></span>
             </div>
         </div>
 
@@ -32,12 +34,13 @@
             </div>
             <div class="flex-1">
                 <input asp-for="DateOfBirth" class="form-input" />
+                <span asp-validation-for="DateOfBirth" class="text-red"></span>
             </div>
         </div>
 
         <div class="form-field flex">
             <div class="w-25">
-                <label asp-for="Gender" class="form-label pt">Gender</label>
+                <label class="form-label">Gender</label>
             </div>
             <div class="flex-1">
                 @{
@@ -45,9 +48,10 @@
                 }
                 @foreach (string gender in genders)
                 {
-                    <input type="radio" asp-for="Gender" value="@gender" class="ml" />
+                    <input type="radio" asp-for="Gender" value="@gender" />
                     <label asp-for="@gender">@gender</label>
                 }
+                <span asp-validation-for="Gender" class="text-red"></span>
             </div>
         </div>
 
@@ -59,6 +63,7 @@
                 <select asp-for="CountryId" class="form-input" asp-items="@ViewBag.Countries">
                     <option value="">Please select</option>
                 </select>
+                <span asp-validation-for="CountryId" class="text-red"></span>
             </div>
         </div>
 
@@ -68,6 +73,7 @@
             </div>
             <div class="flex-1">
                 <textarea asp-for="Address" class="form-input"> </textarea>
+                <span asp-validation-for="Address" class="text-red"></span>
             </div>
         </div>
 
@@ -77,6 +83,7 @@
             <div class="flex-1">
                 <input asp-for="ReceiveNewsLetters" value="true" />
                 <label asp-for="ReceiveNewsLetters" class="form-label">Receive Newsletters</label>
+                <span asp-validation-for="ReceiveNewsLetters" class="text-red"></span>
             </div>
         </div>
 
@@ -85,18 +92,27 @@
             </div>
             <div class="flex-1">
                 <button class="button button-green-back">Create</button>
-                @if (ViewBag.Errors != null)
-                {
-                    <div class="text-red ml">
-                        <ul>
-                            @foreach (string error in ViewBag.Errors)
-                            {
-                                <li class="ml">@error</li>
-                            }
-                        </ul>
-                    </div>
-                }
+
+                <div asp-validation-summary="All" class="text-red">
+                    @if (ViewBag.Errors != null)
+                    {
+                        <div class="text-red ml">
+                            <ul>
+                                @foreach (string error in ViewBag.Errors)
+                                {
+                                    <li class="ml">@error</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </form>
 </div>
+
+
+@*Tem que estar nessa ordem*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

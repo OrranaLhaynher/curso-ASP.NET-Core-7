@@ -3,7 +3,6 @@
     ViewBag.Title = "Edit Person";
 }
 
-<a asp-controller="Persons" asp-action="Index" class="link-hover">Back to Persons List</a>
 <h2>Edit Person</h2>
 
 <div class="center-box">
@@ -93,6 +92,7 @@
             </div>
             <div class="flex-1">
                 <button class="button button-blue-back">Edit</button>
+                <a asp-controller="Persons" asp-action="Index" class="button button-blue-back">Go Back</a>
 
                 <div asp-validation-summary="All" class="text-red">
                     @if (ViewBag.Errors != null)

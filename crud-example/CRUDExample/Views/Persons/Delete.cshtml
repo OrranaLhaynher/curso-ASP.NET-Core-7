@@ -1,0 +1,31 @@
+﻿@model PersonResponse
+@{
+    ViewBag.Title = "Delete Person";
+}
+
+<h2>Delete Person</h2>
+<h3>Are you sure you want to delete this person?</h3>
+
+<div class="w-50">
+    <form asp-controller="Persons" asp-action="Delete" method="post">
+        <input type="hidden" asp-for="PersonId" />
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="PersonName" class="form-label pt">Person Name</label>
+            </div>
+            <div class="flex-1">
+                <input asp-for="PersonName" class="form-input" disabled="disabled"/> @*Não precisa adicionar o id e o name, eles são criados automaticamente*@
+                <span asp-validation-for="PersonName" class="text-red"></span>
+            </div>
+        </div>
+
+        <div class="form-field flex">
+            <div class="w-25">
+            </div>
+            <div class="flex-1">
+                <button class="button button-red-back">Delete</button>
+                <a asp-controller="Persons" asp-action="Index" class="button button-blue-back">Go Back</a>
+            </div>
+        </div>
+    </form>
+</div>

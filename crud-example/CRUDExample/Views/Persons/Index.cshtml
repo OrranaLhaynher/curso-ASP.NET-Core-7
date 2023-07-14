@@ -7,7 +7,13 @@
 <form asp-controller="Person" asp-action="Index" method="get">
     <h1>Persons</h1>
 
-    <a asp-controller="Persons" asp-action="Create" class="link-hover">Create Person</a>
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success text-light" role="alert">
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
     <div class="box flex">
         <div class="flex-1">
             <select class="form-input" name="searchBy">
@@ -31,6 +37,10 @@
         <div class="flex-1">
             <button class="button button-blue-back">Search</button>
             <a asp-controller="Persons" asp-action´="Index" class="link-hover">Clear all</a>
+        </div>
+
+        <div class="flex-1">
+            <a asp-controller="Persons" asp-action="Create" class="button button-green-back">Create Person</a>
         </div>
     </div>
     <table class="table w-100 mt">
@@ -100,6 +110,7 @@
                     <td style="width:10%">@person.ReceiveNewsLetters</td>
                     <td style="width:10%">
                         <a asp-controller="Persons" asp-action="Edit" asp-route-personId="@person.PersonId">Edit</a>
+                        <a asp-controller="Persons" asp-action="Delete" asp-route-personId="@person.PersonId">Delete</a>
                     </td>
                 </tr>
             }

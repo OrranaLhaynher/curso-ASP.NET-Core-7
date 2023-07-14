@@ -35,7 +35,7 @@ namespace CRUDExample.Controllers
 
             List<PersonResponse> persons = _personsService.GetFilteredPersons(searchBy, searchString);
 
-            ViewBag.CurrentSearchBy = searchBy; 
+            ViewBag.CurrentSearchBy = searchBy;
             ViewBag.CurrentSearchString = searchString;
 
             //Sort
@@ -46,15 +46,16 @@ namespace CRUDExample.Controllers
             return View(sortedPersons);
         }
 
-        [Route("[action]")] 
+        [Route("[action]")]
         [HttpGet]
         public IActionResult Create()
         {
             List<CountryResponse> countries = _countriesService.GetAllCountries();
-            ViewBag.Countries = countries.Select(temp => 
-                new SelectListItem() { 
-                    Text = temp.CountryName, 
-                    Value = temp.CountryId.ToString() 
+            ViewBag.Countries = countries.Select(temp =>
+                new SelectListItem()
+                {
+                    Text = temp.CountryName,
+                    Value = temp.CountryId.ToString()
                 }
              );
 
@@ -79,7 +80,7 @@ namespace CRUDExample.Controllers
             return RedirectToAction("Index", "Persons");
         }
 
-        [Route("[action]/{personId}")] 
+        [Route("[action]/{personId}")]
         [HttpGet]
         public IActionResult Edit(Guid personId)
         {
@@ -91,7 +92,7 @@ namespace CRUDExample.Controllers
             }
 
             PersonUpdateRequest personUpdateRequest = person.ToPersonUpdateRequest();
-            
+
             List<CountryResponse> countries = _countriesService.GetAllCountries();
             ViewBag.Countries = countries.Select(temp =>
                 new SelectListItem()
@@ -126,8 +127,47 @@ namespace CRUDExample.Controllers
                 ViewBag.Countries = countries;
 
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-                return View();
+                return View(person.ToPersonUpdateRequest());
             }
+        }
+
+        [Route("[action]/{personId}")]
+        [HttpGet]
+        public IActionResult Delete(Guid? personId)
+        {
+            PersonResponse? person = _personsService.GetPerson(personId);
+
+            if (person == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(person);
+        }
+
+        [Route("[action]/{personId}")]
+        [HttpPost]
+        public IActionResult Delete(PersonResponse personResponse)
+        {
+            PersonResponse? person = _personsService.GetPerson(personResponse.PersonId);
+
+            if (person == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            bool isDeleted = _personsService.DeletePerson(personResponse.PersonId);
+            if (isDeleted)
+            {
+                TempData["MensagemSucesso"] = "Exclusão realizada com sucesso!";
+            }
+            else
+            {
+                TempData["MensagemSucesso"] = "A exclusão não foi realizada!";
+            }
+            
+
+            return RedirectToAction("Index");
         }
     }
 }

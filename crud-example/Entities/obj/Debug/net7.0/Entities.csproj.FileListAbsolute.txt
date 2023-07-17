@@ -10,3 +10,5 @@ C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\Entities\obj\D
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\Entities\obj\Debug\net7.0\refint\Entities.dll
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\Entities\obj\Debug\net7.0\Entities.pdb
 C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\Entities\obj\Debug\net7.0\ref\Entities.dll
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\Entities\bin\Debug\net7.0\Entities.runtimeconfig.json
+C:\Users\orran\Documents\GitHub\curso-ASP.NET-Core-7\crud-example\Entities\obj\Debug\net7.0\Entities.genruntimeconfig.cache

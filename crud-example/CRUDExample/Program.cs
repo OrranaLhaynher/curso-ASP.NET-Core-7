@@ -11,7 +11,7 @@ builder.Services.AddSingleton<IPersonsService, PersonsService>();
 
 builder.Services.AddDbContext<PersonsDbContext>(options =>
 {
-    options.UseSqlServer();//setar que vai ser utilizado o banco Sql Server
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); //setar que vai ser utilizado o banco Sql Server
 });
 
 var app = builder.Build();

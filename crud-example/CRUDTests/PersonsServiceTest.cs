@@ -4,6 +4,7 @@ using Services;
 using ServiceContracts.Enums;
 using Xunit.Abstractions;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUDTests
 {
@@ -13,9 +14,9 @@ namespace CRUDTests
         private readonly ICountriesService _countriesService;
         private readonly ITestOutputHelper _testOutputHelper;
 
-        public PersonsServiceTest(ITestOutputHelper testOutputHelper, ICountriesService countriesService, IPersonsService personsService) { 
-            _personsService = personsService;
-            _countriesService = countriesService;
+        public PersonsServiceTest(ITestOutputHelper testOutputHelper) {
+            _countriesService = new CountriesService(new PersonsDbContext(new DbContextOptionsBuilder<PersonsDbContext>().Options)); 
+            _personsService = new PersonsService(new PersonsDbContext(new DbContextOptionsBuilder<PersonsDbContext>().Options), _countriesService);
             _testOutputHelper = testOutputHelper;
         }
 

@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(PersonsDbContext))]
-    partial class PersonsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230717203950_ColumnEmail")]
+    partial class ColumnEmail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +62,7 @@ namespace Entities.Migrations
                         new
                         {
                             CountryId = new Guid("501c6d33-1bbe-45f1-8fbd-2275913c6218"),
-                            CountryName = "Brazil"
+                            CountryName = "China"
                         });
                 });
 
@@ -149,7 +152,7 @@ namespace Entities.Migrations
                             Address = "50467 Holy Cross Crossing",
                             CountryId = new Guid("56bf46a4-02b8-4693-a0f5-0a95e2218bdc"),
                             DateOfBirth = new DateTime(1995, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Gender = "Nonbinary",
+                            Gender = "Gender",
                             PersonEmail = "ttregona4@stumbleupon.com",
                             PersonName = "Tani",
                             ReceiveNewsLetters = false

@@ -1,3 +1,5 @@
+using Entities;
+using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using Services;
 
@@ -6,6 +8,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<ICountriesService, CountriesService>();
 builder.Services.AddSingleton<IPersonsService, PersonsService>();
+
+builder.Services.AddDbContext<PersonsDbContext>(options =>
+{
+    options.UseSqlServer();//setar que vai ser utilizado o banco Sql Server
+});
 
 var app = builder.Build();
 

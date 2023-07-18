@@ -39,8 +39,9 @@ namespace Services
             Person person = personAddRequest!.ToPerson();
 
             person.PersonId = Guid.NewGuid();
-            _db.Persons.Add(person);
-            _db.SaveChanges();
+            //_db.Persons.Add(person);
+            //_db.SaveChanges();
+            _db.sp_InsertPerson(person);
 
             return ConvertPersonToPersonResponse(person);
         }
@@ -176,7 +177,9 @@ namespace Services
             person.Gender = personUpdateRequest.Gender.ToString();
             person.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
 
-            _db.SaveChanges(); //update
+            //_db.SaveChanges();
+
+            _db.sp_UpdatePerson(person); //update
 
             return ConvertPersonToPersonResponse(person);
         }
@@ -189,8 +192,9 @@ namespace Services
 
             if (person == null) return false;
 
-            _db.Persons.Remove(_db.Persons.First(temp => temp.PersonId == personId));
-            _db.SaveChanges();
+            //_db.Persons.Remove(_db.Persons.First(temp => temp.PersonId == personId));
+            //_db.SaveChanges();
+            _db.sp_DeletePerson(_db.Persons.First(temp => temp.PersonId == personId));
 
             return true;
         }

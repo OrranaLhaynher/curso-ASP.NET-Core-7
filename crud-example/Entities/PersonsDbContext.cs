@@ -39,6 +39,12 @@ namespace Entities
             //        CountryName = "Brazil"
             //    });
             //}
+
+            //Fluent API
+            modelBuilder.Entity<Person>().Property(temp => temp.TIN)
+                .HasColumnType("TaxIdentificationNumber")
+                .HasColumnType("varchar(8)")
+                .HasDefaultValue("ABC12345");
         }
 
         public List<Person> sp_GetAllPersons()
